@@ -99,6 +99,50 @@ function designfly_content_width() {
 add_action( 'after_setup_theme', 'designfly_content_width', 0 );
 
 /**
+ * This function is registered to 'init' action hook.
+ * It registers custom post type.
+ */
+function designfly_init() {
+	$labels = array(
+		'name'                     => _x( 'Portfolios', 'Post Type General Name', 'designfly' ),
+		'singular_name'            => _x( 'Portfolio', 'Post Type Sigular Name', 'designfly' ),
+		'add_new'                  => _x( 'Add New', 'Add New', 'designfly' ),
+		'add_new_item'             => __( 'Add New Portfolio', 'designfly' ),
+		'edit_item'                => __( 'Edit Portfolio', 'designfly' ),
+		'new_item'                 => __( 'New Portfolio', 'designfly' ),
+		'view_item'                => __( 'View Portfolio', 'designfly' ),
+		'view_items'               => __( 'View Portfolios', 'designfly' ),
+		'search_items'             => __( 'Search Portfolios', 'designfly' ),
+		'not_found'                => __( 'No portfolios found.', 'designfly' ),
+		'not_found_in_trash'       => __( 'No portfolios found in Trash.', 'designfly' ),
+		'all_items'                => __( 'All Portfolios', 'designfly' ),
+		'archives'                 => __( 'Portfolio Archives', 'designfly' ),
+		'attributes'               => __( 'Portfolio Attributes', 'designfly' ),
+		'insert_into_item'         => __( 'Insert into portfolio', 'designfly' ),
+		'uploaded_to_this_item'    => __( 'Uploaded to this portfolio', 'designfly' ),
+		'filter_items_list'        => __( 'Filter portfolio list', 'designfly' ),
+		'items_list_navigation'    => __( 'Portfolios list navigation', 'designfly' ),
+		'items_list'               => __( 'Portfolios list', 'designfly' ),
+		'item_published'           => __( 'Portfolio published.', 'designfly' ),
+		'item_published_privately' => __( 'Portfolio published privately.', 'designfly' ),
+		'item_reverted_to_draft'   => __( 'Portfolio reverted to draft.', 'designfly' ),
+		'item_scheduled'           => __( 'Portfolio scheduled.', 'designfly' ),
+		'item_updated'             => __( 'Portfolio updated.', 'designfly' ),
+	);
+
+	$args = array(
+		'labels'      => $labels,
+		'description' => __( 'Portfolios for DESIGNfly theme.' ),
+		'public'      => true,
+		'menu_icon'   => 'dashicons-portfolio',
+		'has_archive' => true,
+	);
+
+	register_post_type( 'designfly_portfolio', $args );
+}
+add_action( 'init', 'designfly_init' );
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
