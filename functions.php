@@ -143,6 +143,23 @@ function designfly_init() {
 add_action( 'init', 'designfly_init' );
 
 /**
+ * This function is registered to 'pre_get_posts' action hook.
+ * 
+ * This function alters the main query of home page and shows portfolio list
+ * instead of default posts.
+ * 
+ * @param Object $query Main query object.
+ */
+function designfly_pre_get_posts( $query ) {
+
+	if ( $query->is_main_query() && ! is_admin() && $query->is_home() ) {
+		$query->set( 'post_type', 'designfly_portfolio' );
+		$query->set( 'posts_per_page', '6' );
+	}
+}
+add_action( 'pre_get_posts', 'designfly_pre_get_posts' );
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
