@@ -27,7 +27,9 @@
 	<header id="masthead" class="site-header">
 		<div class="site-header-content">
 			<div class="site-branding">
-				<?php the_custom_logo(); ?>
+				<a class="site-logo-link" src="">
+					<img class="site-logo" href="<?= get_template_directory_uri() ?>/img/logo.png">
+				</a>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation">

@@ -44,7 +44,7 @@ if ( ! function_exists( 'designfly_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'designfly' ),
+			'primary-menu' => esc_html__( 'Primary', 'designfly' ),
 		) );
 
 		/*
@@ -62,26 +62,21 @@ if ( ! function_exists( 'designfly_setup' ) ) :
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'designfly_custom_background_args', array(
 			'default-color' => 'ffffff',
-			'default-image' => '',
+			'default-image' => get_template_directory_uri() . '/img/rapeatable-bg.png',
 		) ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		
 	}
 endif;
 add_action( 'after_setup_theme', 'designfly_setup' );
+
+
+function designfly_after_switch_theme() {
+	flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'designfly_after_switch_theme' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
