@@ -633,13 +633,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
-
 .main-navigation ul {
 	display: none;
 	list-style: none;
@@ -678,6 +671,7 @@ a:hover, a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	padding: 10px;
 }
 
 .main-navigation a {
@@ -979,4 +973,59 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+
+.site-header {
+	height: 105px;
+	width: 100%;
+}
+
+.site-header .site-header-content {
+	padding-top: 1%;
+	width: 60%;
+	margin: auto;
+}
+
+.site-branding {
+	float: left;
+}
+
+#site-navigation {
+	float: right;
+	font-family: 'Open sans';
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#site-navigation .menu-designfly-menu-container {
+	padding-top: 20px;
+}
+
+#site-navigation a:link, #site-navigation a:visited, #site-navigation a:active {
+	color: #222222;
+}
+
+#site-navigation li.current-menu-item {
+	background-color: #ef4634;
+	border-radius: 3px;
+}
+
+#site-navigation li:hover {
+	color: #ffffff;
+	background-color: #ef4634;
+	border-radius: 3px;
+}
+
+#site-navigation li:hover a {
+	color: #ffffff;
+}
+
+#site-navigation .search-container {
+	padding-top: 20px;
+}
+
+#site-navigation .search-container input {
+	height: 20px;
+	width: 150px;
 }

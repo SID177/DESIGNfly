@@ -100,7 +100,7 @@ add_action( 'after_setup_theme', 'designfly_content_width', 0 );
 
 /**
  * This function is registered to 'init' action hook.
- * It registers custom post type.
+ * It registers custom post type and custom taxonomy.
  */
 function designfly_init() {
 	$labels = array(
@@ -132,13 +132,28 @@ function designfly_init() {
 
 	$args = array(
 		'labels'      => $labels,
-		'description' => __( 'Portfolios for DESIGNfly theme.' ),
+		'description' => __( 'Portfolios for DESIGNfly theme.', 'designfly' ),
 		'public'      => true,
 		'menu_icon'   => 'dashicons-portfolio',
 		'has_archive' => true,
+		'supports'    => array( 'title', 'excerpt', 'thumbnail', 'page-attributes' )
 	);
 
 	register_post_type( 'designfly_portfolio', $args );
+
+
+	$labels = array(
+		'name'          => _x( 'Portfolio Categories', 'Portfolio category general name', 'designfly' ),
+		'singular_name' => _x( 'Portfolio Category', 'Portfolio category singular name', 'designfly' ),
+	);
+
+	$args = array(
+		'hierarchical' => false,
+		'labels'       => $labels,
+		'public'       => true,
+	);
+
+	register_taxonomy( 'designfly_categories', array( 'designfly_portfolio' ), $args );
 }
 add_action( 'init', 'designfly_init' );
 
@@ -182,6 +197,8 @@ add_action( 'widgets_init', 'designfly_widgets_init' );
  */
 function designfly_scripts() {
 	wp_enqueue_style( 'designfly-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'designfly-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap' );
 
 	wp_enqueue_script( 'designfly-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
