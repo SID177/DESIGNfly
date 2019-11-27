@@ -27,25 +27,21 @@
 	<header id="masthead" class="site-header">
 		<div class="site-header-content">
 			<div class="site-branding">
-				<a class="site-logo-link" src="">
-					<img class="site-logo" href="<?= get_template_directory_uri() ?>/img/logo.png">
+				<a class="site-logo-link" href="<?= home_url() ?>">
+					<img class="site-logo" src="<?= get_template_directory_uri() ?>/img/logo.png">
 				</a>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-				?>
-				<div class="search-container">
-					<form>
-						<input type="text">
-						<button></button>
-					</form>
-				</div>
-			</nav><!-- #site-navigation -->
+			<div class="site-navigation-search">
+				<nav id="site-navigation" class="main-navigation">
+					<?php
+					wp_nav_menu( array( 
+						'theme_location' => 'primary-menu'
+					) );
+					?>
+				</nav><!-- #site-navigation -->
+				<?php get_search_form(); ?>
+			</div>
 		</div>
 	</header><!-- #masthead -->
 
