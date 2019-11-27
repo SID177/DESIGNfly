@@ -1036,6 +1036,7 @@ object {
 
 #site-navigation a:link, #site-navigation a:visited, #site-navigation a:active {
 	color: #222222;
+	font-size: 14px;
 }
 
 #site-navigation li.current-menu-item {
