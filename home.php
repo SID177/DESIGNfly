@@ -1,9 +1,7 @@
 <?php
 /**
- * The home page
+ * The Blog Posts index page
  *
- * The main homepage of the theme. It shows portfolios and link to
- * portfolio archive page.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
