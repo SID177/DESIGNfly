@@ -1001,12 +1001,28 @@ object {
 }
 
 #searchform {
-	padding-top: 25px;
+	padding-top: 28px;
+	padding-left: 10px;
 }
 
 #searchform .search-input {
 	width: 150px;
 	height: 20px;
+}
+
+#searchform button {
+	border-radius: 100%;
+	background-color: #212529b3;
+	color: #ffffff;
+	height: 24px;
+	width: 24px;
+}
+
+#searchform button span {
+	position: relative;
+    top: -0.25em;
+	right: 0.65em;
+	font-size: 16px;
 }
 
 #site-navigation a:link, #site-navigation a:visited, #site-navigation a:active {
