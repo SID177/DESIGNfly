@@ -1014,6 +1014,9 @@ object {
 #searchform .search-input {
 	width: 150px;
 	height: 20px;
+	border: 1px solid #62585f;
+	color: #ffffff;
+	border-radius: 3px;
 }
 
 #searchform button {
