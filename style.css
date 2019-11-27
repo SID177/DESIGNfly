@@ -982,24 +982,31 @@ object {
 }
 
 .site-header .site-header-content {
-	padding-top: 1%;
-	width: 60%;
+	width: 65%;
+	display: flex;
+	justify-content: space-between;
 	margin: auto;
 }
 
-.site-branding {
-	float: left;
-}
-
-#site-navigation {
-	float: right;
+.site-navigation-search {
 	font-family: 'Open sans';
 	font-size: 14px;
 	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
 }
 
-#site-navigation .menu-designfly-menu-container {
+#site-navigation:first-child {
 	padding-top: 20px;
+}
+
+#searchform {
+	padding-top: 25px;
+}
+
+#searchform .search-input {
+	width: 150px;
+	height: 20px;
 }
 
 #site-navigation a:link, #site-navigation a:visited, #site-navigation a:active {
@@ -1019,13 +1026,4 @@ object {
 
 #site-navigation li:hover a {
 	color: #ffffff;
-}
-
-#site-navigation .search-container {
-	padding-top: 20px;
-}
-
-#site-navigation .search-container input {
-	height: 20px;
-	width: 150px;
 }
