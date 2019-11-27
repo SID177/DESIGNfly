@@ -153,20 +153,6 @@ function designfly_init() {
 add_action( 'init', 'designfly_init' );
 
 /**
- * This function is registered to 'pre_get_posts' action hook.
- * 
- * This function alters the main query of home page and shows portfolio list
- * instead of default posts.
- * 
- * @param Object $query Main query object.
- */
-function designfly_pre_get_posts( $query ) {
-
-	
-}
-add_action( 'pre_get_posts', 'designfly_pre_get_posts' );
-
-/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -188,6 +174,10 @@ add_action( 'widgets_init', 'designfly_widgets_init' );
  * Enqueue scripts and styles.
  */
 function designfly_scripts() {
+	if ( is_front_page() ) {
+		wp_enqueue_style( 'designfly-front-page-style', get_template_directory_uri() . '/css/front-page.css' );
+	}
+
 	wp_enqueue_style( 'designfly-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'designfly-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap' );
