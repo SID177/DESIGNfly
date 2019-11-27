@@ -162,10 +162,7 @@ add_action( 'init', 'designfly_init' );
  */
 function designfly_pre_get_posts( $query ) {
 
-	if ( $query->is_main_query() && ! is_admin() && $query->is_home() ) {
-		$query->set( 'post_type', 'designfly_portfolio' );
-		$query->set( 'posts_per_page', '6' );
-	}
+	
 }
 add_action( 'pre_get_posts', 'designfly_pre_get_posts' );
 
