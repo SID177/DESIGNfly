@@ -979,6 +979,12 @@ object {
 .site-header {
 	height: 105px;
 	width: 100%;
+	display: table;
+}
+
+.site-header .site-header-middle {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .site-header .site-header-content {

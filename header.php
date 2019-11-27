@@ -25,22 +25,24 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'designfly' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-header-content">
-			<div class="site-branding">
-				<a class="site-logo-link" href="<?= home_url() ?>">
-					<img class="site-logo" src="<?= get_template_directory_uri() ?>/img/logo.png">
-				</a>
-			</div><!-- .site-branding -->
+		<div class="site-header-middle">
+			<div class="site-header-content">
+				<div class="site-branding">
+					<a class="site-logo-link" href="<?= home_url() ?>">
+						<img class="site-logo" src="<?= get_template_directory_uri() ?>/img/logo.png">
+					</a>
+				</div><!-- .site-branding -->
 
-			<div class="site-navigation-search">
-				<nav id="site-navigation" class="main-navigation">
-					<?php
-					wp_nav_menu( array( 
-						'theme_location' => 'primary-menu'
-					) );
-					?>
-				</nav><!-- #site-navigation -->
-				<?php get_search_form(); ?>
+				<div class="site-navigation-search">
+					<nav id="site-navigation" class="main-navigation">
+						<?php
+						wp_nav_menu( array( 
+							'theme_location' => 'primary-menu'
+						) );
+						?>
+					</nav><!-- #site-navigation -->
+					<?php get_search_form(); ?>
+				</div>
 			</div>
 		</div>
 	</header><!-- #masthead -->

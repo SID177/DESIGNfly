@@ -1,0 +1,14 @@
+/*
+* This css only applies to front-page.php template.
+*/
+
+div.front-header {
+	height: 544px;
+	width: 100%;
+	text-align: center;
+	background-color: #e73d2d;
+}
+
+div.front-header > img {
+	height: 100%;
+}

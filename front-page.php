@@ -12,6 +12,9 @@
 
 get_header();
 ?>
+	<div class="front-header">
+		<img src="<?= get_template_directory_uri() ?>/img/slider-image.png">
+	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
