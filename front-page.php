@@ -14,6 +14,10 @@ get_header();
 ?>
 	<div class="front-header">
 		<img src="<?= get_template_directory_uri() ?>/img/slider-image.png">
+		<div class="text-block">
+			<div><?= esc_html__( 'Gearing up the ideas', 'designfly' ) ?></div>
+			<p><?= esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'designfly' ) ?></p>
+		</div>
 	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

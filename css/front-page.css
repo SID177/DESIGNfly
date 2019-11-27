@@ -12,3 +12,27 @@ div.front-header {
 div.front-header > img {
 	height: 100%;
 }
+
+div.front-header > div.text-block {
+    position: relative;
+    top: -40%;
+}
+
+div.front-header > div.text-block div {
+    font-family: 'Open sans';
+    font-weight: bold;
+    font-size: 70px;
+    color: #ffffff;
+    text-shadow: 2px #950904;
+}
+
+div.front-header > div.text-block p {
+    font-family: 'Open sans';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    padding-top: 10px;
+    width: 45%;
+    margin: auto;
+}
