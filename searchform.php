@@ -10,6 +10,8 @@
 ?>
 
 <div id="searchform">
-    <input type="text" class="search-input">
-    <button><span class="dashicons dashicons-search"></span></button>
+    <form>
+        <input type="text" class="search-input">
+        <input type="image" class="search-submit" src="<?= get_template_directory_uri() ?>/img/search-icon.png">
+    </form>
 </div>

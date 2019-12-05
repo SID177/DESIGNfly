@@ -1007,7 +1007,7 @@ object {
 }
 
 #searchform {
-	padding-top: 28px;
+	padding-top: 25px;
 	padding-left: 10px;
 }
 
@@ -1019,19 +1019,9 @@ object {
 	border-radius: 3px;
 }
 
-#searchform button {
-	border-radius: 100%;
-	background-color: #212529b3;
-	color: #ffffff;
-	height: 24px;
-	width: 24px;
-}
-
-#searchform button span {
+#searchform .search-submit {
 	position: relative;
-    top: -0.25em;
-	right: 0.65em;
-	font-size: 16px;
+	top: 4px;
 }
 
 #site-navigation a:link, #site-navigation a:visited, #site-navigation a:active {
