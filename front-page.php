@@ -19,6 +19,9 @@ get_header();
 			<p><?= esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'designfly' ) ?></p>
 		</div>
 	</div>
+	<div class="features">
+		
+	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

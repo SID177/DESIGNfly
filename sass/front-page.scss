@@ -1,0 +1,45 @@
+/*
+* This css only applies to front-page.php template.
+*/
+
+div.front-header {
+	height: 544px;
+	width: 100%;
+	text-align: center;
+    background-color: #e73d2d;
+    margin-bottom: 3px;
+    
+    & > img {
+        height: 100%;
+    }
+
+    & > div.text-block {
+        position: relative;
+        top: -44%;
+
+        div {
+            font-family: 'Open sans';
+            font-weight: bold;
+            font-size: 70px;
+            color: #ffffff;
+            text-shadow: 2px #950904;
+        }
+
+        p {
+            font-family: 'Open sans';
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #ffffff;
+            padding-top: 10px;
+            width: 45%;
+            margin: auto;
+        }
+    }
+}
+
+div.features {
+    background-image: url('../img/features-repeatable-bg.png');
+    height: 101px;
+    width: 100%;
+}

@@ -1,0 +1,66 @@
+/*
+* This file contains data variables used across the site.
+*/
+/*
+* This is a common css file for entire theme.
+*/
+.site-header {
+  height: 105px;
+  width: 100%;
+  display: table;
+}
+.site-header .site-header-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.site-header .site-header-content {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.site-header .site-navigation-search {
+  font-family: "Open sans";
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+#searchform {
+  padding-top: 25px;
+  padding-left: 10px;
+}
+#searchform .search-input {
+  width: 150px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 1px solid #62585f;
+  border-radius: 3px;
+}
+#searchform .search-submit {
+  position: relative;
+  top: 4px;
+}
+
+#site-navigation:first-child {
+  padding-top: 20px;
+}
+#site-navigation a:link, #site-navigation a:visited, #site-navigation a:active {
+  color: #222222;
+  font-size: 14px;
+}
+#site-navigation li.current-menu-item {
+  background-color: #ef4634;
+  border-radius: 3px;
+}
+#site-navigation li:hover {
+  color: #ffffff;
+  background-color: #ef4634;
+  border-radius: 3px;
+}
+#site-navigation a {
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=theme.css.map */
