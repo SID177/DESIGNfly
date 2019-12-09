@@ -1,4 +1,7 @@
 /*
+* This file contains data variables used across the site.
+*/
+/*
 * This css only applies to front-page.php template.
 */
 div.front-header {
@@ -31,12 +34,6 @@ div.front-header > div.text-block p {
   padding-top: 10px;
   width: 45%;
   margin: auto;
-}
-
-div.features {
-  background-image: url("../img/features-repeatable-bg.png");
-  height: 101px;
-  width: 100%;
 }
 
 /*# sourceMappingURL=front-page.css.map */

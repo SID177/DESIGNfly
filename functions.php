@@ -146,6 +146,7 @@ function designfly_init() {
 		'hierarchical' => false,
 		'labels'       => $labels,
 		'public'       => true,
+		'description'  => __( 'Neque porro quisquam est, dolorem ipsum quia dolor amet...', 'designfly' ),
 	);
 
 	register_taxonomy( 'designfly_categories', array( 'designfly_portfolio' ), $args );

@@ -19,8 +19,28 @@ get_header();
 			<p><?= esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'designfly' ) ?></p>
 		</div>
 	</div>
-	<div class="features">
-		
+	<div class="portfolio-taxonomy">
+		<div class="portfolio-taxonomy-middle">
+			<div class="portfolio-taxonomy-content">
+
+				<?php
+				$terms = get_terms( array( 'taxonomy' => 'designfly_categories', 'hide_empty' => false ) );
+				
+				foreach ( $terms as $term ) {
+					?>
+					<div class="portfolio-taxonomy-block">
+						<img src="<?= get_template_directory_uri() . '/img/taxonomy-icons/' . esc_html( $term->slug ) . '.png' ?>">
+						<div class="portfolio-taxonomy-details">
+							<span class="portfolio-taxonomy-title"><?= esc_html( $term->name ) ?></span>
+							<p class="portfolio-taxonomy-description"><?= esc_html( $term->description ) ?></p>
+						</div>
+					</div>
+					<?php
+				}
+				?>
+						
+			</div>
+		</div>
 	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

@@ -2,6 +2,8 @@
 * This css only applies to front-page.php template.
 */
 
+@use 'variables';
+
 div.front-header {
 	height: 544px;
 	width: 100%;
@@ -36,10 +38,4 @@ div.front-header {
             margin: auto;
         }
     }
-}
-
-div.features {
-    background-image: url('../img/features-repeatable-bg.png');
-    height: 101px;
-    width: 100%;
 }

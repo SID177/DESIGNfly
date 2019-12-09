@@ -73,3 +73,59 @@
         color: #ffffff;
     }
 } 
+
+div.portfolio-taxonomy {
+    background-image: url('../img/features-repeatable-bg.png');
+    height: 101px;
+    width: 100%;
+    display: table;
+
+    div.portfolio-taxonomy-middle {
+        display: table-cell;
+        vertical-align: middle;
+        
+        div.portfolio-taxonomy-content {
+            width: variables.$content-width;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+
+            div.portfolio-taxonomy-block {
+                display: flex;
+                justify-content: space-between;
+
+                
+                img {
+                    position: relative;
+                    top: 15%;
+                    height: 50px;
+                    margin-right: 1em;
+                }
+
+                div.portfolio-taxonomy-details {
+                    
+                    span.portfolio-taxonomy-title {
+                        font-family: 'Open sans';
+                        font-weight: bold;
+                        font-size: 20px;
+                        color: #ef4634;
+                        text-shadow: 2px #ffffff;
+                    }
+
+                    span.portfolio-taxonomy-title:hover {
+                        color: #222222;
+                    }
+                    
+                    p.portfolio-taxonomy-description {
+                        margin: 0;
+                        font-family: 'Open sans';
+                        font-weight: normal;
+                        font-size: 13px;
+                        color: #333333;
+                        line-height: 19.5px;
+                    }
+                }
+            }
+        }
+    }
+}

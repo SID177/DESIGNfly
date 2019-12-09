@@ -63,4 +63,49 @@
   color: #ffffff;
 }
 
+div.portfolio-taxonomy {
+  background-image: url("../img/features-repeatable-bg.png");
+  height: 101px;
+  width: 100%;
+  display: table;
+}
+div.portfolio-taxonomy div.portfolio-taxonomy-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block {
+  display: flex;
+  justify-content: space-between;
+}
+div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block img {
+  position: relative;
+  top: 15%;
+  height: 50px;
+  margin-right: 1em;
+}
+div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details span.portfolio-taxonomy-title {
+  font-family: "Open sans";
+  font-weight: bold;
+  font-size: 20px;
+  color: #ef4634;
+  text-shadow: 2px #ffffff;
+}
+div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details span.portfolio-taxonomy-title:hover {
+  color: #222222;
+}
+div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details p.portfolio-taxonomy-description {
+  margin: 0;
+  font-family: "Open sans";
+  font-weight: normal;
+  font-size: 13px;
+  color: #333333;
+  line-height: 19.5px;
+}
+
 /*# sourceMappingURL=theme.css.map */
