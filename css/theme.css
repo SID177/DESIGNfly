@@ -20,9 +20,6 @@
   margin: auto;
 }
 .site-header .site-navigation-search {
-  font-family: "Open sans";
-  font-size: 14px;
-  font-weight: bold;
   display: flex;
   justify-content: space-between;
 }
@@ -46,20 +43,20 @@
 #site-navigation:first-child {
   padding-top: 20px;
 }
-#site-navigation a:link, #site-navigation a:visited, #site-navigation a:active {
+#site-navigation a, #site-navigation a:visited {
   color: #222222;
+  font-family: "Open sans";
   font-size: 14px;
+  font-weight: bold;
 }
-#site-navigation li.current-menu-item {
+#site-navigation li {
+  margin-left: 3px;
+}
+#site-navigation li.current-menu-item, #site-navigation li:hover {
   background-color: #ef4634;
   border-radius: 3px;
 }
-#site-navigation li:hover {
-  color: #ffffff;
-  background-color: #ef4634;
-  border-radius: 3px;
-}
-#site-navigation a {
+#site-navigation li.current-menu-item a, #site-navigation li:hover a {
   color: #ffffff;
 }
 
@@ -94,7 +91,7 @@ div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-cont
   font-weight: bold;
   font-size: 20px;
   color: #ef4634;
-  text-shadow: 2px #ffffff;
+  text-shadow: 2px 2px #ffffff;
 }
 div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details span.portfolio-taxonomy-title:hover {
   color: #222222;

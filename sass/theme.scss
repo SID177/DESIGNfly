@@ -22,9 +22,6 @@
     }
 
     .site-navigation-search {
-        font-family: 'Open sans';
-        font-size: 14px;
-        font-weight: bold;
         display: flex;
         justify-content: space-between;
     }
@@ -49,29 +46,31 @@
 }
 
 #site-navigation {
+
     &:first-child {
         padding-top: 20px;
     }
 
-    a:link, a:visited, a:active {
+    a, a:visited {
         color: #222222;
+        font-family: 'Open sans';
         font-size: 14px;
+        font-weight: bold;
     }
 
-    li.current-menu-item {
+    li {
+        margin-left: 3px;
+    }
+
+    li.current-menu-item, li:hover {
         background-color: #ef4634;
         border-radius: 3px;
-    }
 
-    li:hover {
-        color: #ffffff;
-        background-color: #ef4634;
-        border-radius: 3px;
+        a {
+            color: #ffffff;
+        }
     }
-
-    a {
-        color: #ffffff;
-    }
+    
 } 
 
 div.portfolio-taxonomy {
@@ -109,7 +108,7 @@ div.portfolio-taxonomy {
                         font-weight: bold;
                         font-size: 20px;
                         color: #ef4634;
-                        text-shadow: 2px #ffffff;
+                        text-shadow: 2px 2px #ffffff;
                     }
 
                     span.portfolio-taxonomy-title:hover {

@@ -23,7 +23,7 @@ div.front-header > div.text-block div {
   font-weight: bold;
   font-size: 70px;
   color: #ffffff;
-  text-shadow: 2px #950904;
+  text-shadow: 2px 2px #950904;
 }
 div.front-header > div.text-block p {
   font-family: "Open sans";
