@@ -46,7 +46,7 @@ get_header();
 		<main id="main" class="site-main">
 			<div class="main-title">
 				<span><?= esc_html__( "D'SIGN IS THE SOUL", 'designfly' ) ?></span>
-				<button class="view-all"><?= esc_html__( 'view all', 'designfly' ) ?></button>
+				<a href="<?= get_post_type_archive_link( 'designfly_portfolio' ) ?>"><?= esc_html__( 'view all', 'designfly' ) ?></a>
 			</div>
 
 			<div class="portfolio-block">
