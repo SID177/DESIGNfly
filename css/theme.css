@@ -105,4 +105,91 @@ div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-cont
   line-height: 19.5px;
 }
 
+div#primary {
+  width: 100%;
+  margin-top: 3em;
+}
+div#primary main#main {
+  margin: 0 auto;
+  width: 65%;
+}
+div#primary main#main div.main-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #62585f;
+}
+div#primary main#main div.main-title span {
+  font-family: "Open sans";
+  font-weight: lighter;
+  font-size: 45px;
+  color: #62585f;
+  text-shadow: 2px 2px #ffffff;
+}
+div#primary main#main div.main-title button {
+  font-family: "Open sans";
+  font-weight: normal;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #222222;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 0;
+  height: 1.8em;
+  position: relative;
+  top: 1.25em;
+}
+div#primary main#main div.main-title button:hover, div#primary main#main div.main-title button.selected {
+  background-color: #ef4634;
+}
+div#primary main#main div.portfolio-block {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 17px;
+  padding: 1.3em 0;
+  padding-bottom: 1.8em;
+  border-bottom: 1px solid #62585f;
+  overflow: auto;
+}
+div#primary main#main div.portfolio-block .portfolio-item {
+  height: 210px;
+  width: 300px;
+  position: relative;
+}
+div#primary main#main div.portfolio-block .portfolio-item img.portfolio-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: none;
+}
+div#primary main#main div.portfolio-block .portfolio-item .portfolio-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  border-radius: 10px;
+  background-color: #222222;
+  cursor: pointer;
+}
+div#primary main#main div.portfolio-block .portfolio-item .portfolio-overlay .portfolio-overlay-text {
+  color: #ffffff;
+  font-family: "Open sans";
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+div#primary main#main div.portfolio-block .portfolio-item:hover .portfolio-overlay {
+  opacity: 0.8;
+}
+
 /*# sourceMappingURL=theme.css.map */

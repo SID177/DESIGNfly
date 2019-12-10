@@ -44,31 +44,36 @@ get_header();
 	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<div class="main-title">
+				<span><?= esc_html__( "D'SIGN IS THE SOUL", 'designfly' ) ?></span>
+				<button class="view-all"><?= esc_html__( 'view all', 'designfly' ) ?></button>
+			</div>
 
-		<?php
-		if ( have_posts() ) :
+			<div class="portfolio-block">
+				<?php
+				$query = new WP_Query( array(
+					'post_type'      => 'designfly_portfolio',
+					'post_status'    => 'publish',
+					'posts_per_page' => 6,
+				) );
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				if ( $query->have_posts() ) :
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				// get_template_part( 'template-parts/content', get_post_type() );
+					while ( $query->have_posts() ) :
 
-			endwhile;
+						$query->the_post();
+						
+						get_template_part( 'template-parts/content', 'portfolio' );
 
-			the_posts_navigation();
+					endwhile;
 
-		else :
+				else :
 
-			get_template_part( 'template-parts/content', 'none' );
+					get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+				endif;
+				?>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
