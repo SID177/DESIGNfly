@@ -35,7 +35,7 @@
         width: 150px;
         height: 20px;
         background-color: #ffffff;
-        border: 1px solid #62585f;
+        border: variables.$border-bottom;
         border-radius: 3px;
     }
 
@@ -140,7 +140,7 @@ div#primary {
         div.main-title {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #62585f;
+            border-bottom: variables.$border-bottom;
 
             span {
                 font-family: 'Open sans';
@@ -178,7 +178,7 @@ div#primary {
             grid-gap: 17px;
             padding: 1.3em 0;
             padding-bottom: 1.8em;
-            border-bottom: 1px solid #62585f;
+            border-bottom: variables.$border-bottom;
             overflow: auto;
 
             .portfolio-item {
@@ -225,6 +225,64 @@ div#primary {
             .portfolio-item:hover .portfolio-overlay {
                 opacity: 0.8;
             }
+        }
+    }
+}
+
+footer.site-footer {
+    margin: 0 auto;
+    width: variables.$content-width;
+
+    div.site-info {
+        width: 100%;
+        padding: 3em 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        font-family: 'Open sans';
+        font-weight: normal;
+        border-bottom: variables.$border-bottom;
+
+        span.title {
+            font-size: 25px;
+            color: #62585f;
+            text-shadow: 2px 2px #ffffff;
+        }
+        
+        p.description {
+            font-size: 14px;
+            color: #62585f;
+            line-height: 21px;
+            margin: 0.8em 0;
+
+            span.email {
+                color: #ef4634;
+            }
+        }
+
+        div.site-detail {   
+
+            a.read-more {
+                font-size: 14px;
+                color: #ef4634;
+            }
+        }
+
+        div.contact-detail {
+            margin-left: 10%;
+        }
+    }
+
+    div.copyright-div {
+        margin: 1em 0;
+        font-family: 'Open sans';
+        font-weight: normal;
+        font-size: 14px;
+        color: #62585f;
+        width: 100%;
+        text-align: center;
+
+        a.copyright-rtcamp {
+            color: #ef4634;
         }
     }
 }
