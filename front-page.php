@@ -57,5 +57,6 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
+get_template_part( 'template-parts/content', 'portfolio-modal' );
 get_sidebar();
 get_footer();

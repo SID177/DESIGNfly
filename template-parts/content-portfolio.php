@@ -9,7 +9,7 @@
 ?>
 
 <div <?php post_class( 'portfolio-item' ); ?> id="post-<?php the_ID(); ?>">
-	<img class="portfolio-img" src="<?= get_the_post_thumbnail_url() ?>">
+	<img class="portfolio-img" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= esc_html( get_the_title() ) ?>">
 	<div class="portfolio-overlay">
 		<div class="portfolio-overlay-text">
 			<span class="dashicons dashicons-visibility portfolio-overlay-dashicon"></span><br/>
