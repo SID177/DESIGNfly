@@ -33,7 +33,7 @@ $( document ).ready( function() {
         if ( previousBlock.length > 0 ) {
             setModal( previousBlock );
         } else {
-            var lastBlock = $( '.portfolio-block .portfolio-item' ).last();
+            var lastBlock = portfolioBlock.find( '.portfolio-item' ).last();
             if ( lastBlock.length > 0 ) {
                 setModal( lastBlock );
             }
@@ -46,29 +46,10 @@ $( document ).ready( function() {
         if ( nextBlock.length > 0 ) {
             setModal( nextBlock );
         } else {
-            var firstBlock = $( '.portfolio-block .portfolio-item' ).first();
+            var firstBlock = portfolioBlock.find( '.portfolio-item' ).first();
             if ( firstBlock.length > 0 ) {
                 setModal( firstBlock );
             }
         }
     } );
 } );
-
-// var leftArrow = document.getElementsByClassName( 'navigation-arrow-left' )[0];
-// leftArrow.onclick = function() {
-//     nextBlock = currentBlock.nextSibling;
-//     console.log(nextBlock);
-    
-//     if ( nextBlock && nextBlock.classList && nextBlock.classList.contains( 'portfolio-item' ) ) {
-//         setModal( nextBlock );
-//     }
-// }
-
-// var rightArrow = document.getElementsByClassName( 'navigation-arrow-right' )[0];
-// rightArrow.onclick = function() {
-//     previousBlock = currentBlock.previousSibling;
-    
-//     if ( previousBlock && previousBlock.classList && previousBlock.classList.contains( 'portfolio-item' ) ) {
-//         setModal( previousBlock );
-//     }
-// }

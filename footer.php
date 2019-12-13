@@ -31,7 +31,7 @@
 			</div>
 		</div><!-- .site-info -->
 		<div class="copyright-div">
-			<span>&copy; <?= esc_html__( "2012 - D'SIGNfly | Designed by ", 'designfly' ) ?><a href="<?= esc_url( 'https://rtcamp.com/' ) ?>" class="copyright-rtcamp"><?= esc_html__( 'rtCamp', 'designfly' ) ?></a></span>
+			<span>&copy; <?= esc_html__( "2012 - D'SIGNfly | Designed by ", 'designfly' ) ?><a target="_blank" href="<?= esc_url( 'https://rtcamp.com/' ) ?>" class="copyright-rtcamp"><?= esc_html__( 'rtCamp', 'designfly' ) ?></a></span>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
