@@ -25,7 +25,7 @@
 				<p class="description">
 					<?= esc_html__( 'Street 21 Planet, A-11, dapibus tristique. 123551', 'designfly' ) ?><br/>
 					<?= esc_html__( 'Tel: 123 4567890; Fax: 123 456789', 'designfly' ) ?><br/>
-					<?= esc_html__( 'Email: ', 'designfly' ) ?><span class="email"><?= esc_html__( 'contactus@designfly.com', 'designfly' ) ?></span>
+					<?= esc_html__( 'Email: ', 'designfly' ) ?><span class="email"><?= esc_html( 'contactus@designfly.com' ) ?></span>
 				</p>
 				<img src="<?= get_template_directory_uri() . '/img/social.png' ?>">
 			</div>
