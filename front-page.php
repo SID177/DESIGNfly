@@ -37,13 +37,21 @@ get_header();
 
 				if ( $query->have_posts() ) :
 
-					while ( $query->have_posts() ) :
+					?>
+					<div class="portfolio-grid">
+					<?php
 
-						$query->the_post();
-						
-						get_template_part( 'template-parts/content', 'portfolio' );
+						while ( $query->have_posts() ) :
 
-					endwhile;
+							$query->the_post();
+							
+							get_template_part( 'template-parts/content', 'portfolio' );
+
+						endwhile;
+					
+					?>
+					</div>
+					<?php
 
 				else :
 

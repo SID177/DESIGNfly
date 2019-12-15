@@ -172,58 +172,116 @@ div#primary {
         }
 
         div.portfolio-block {
-            width: 100%;
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-gap: 17px;
             padding: 1.3em 0;
             padding-bottom: 1.8em;
             border-bottom: variables.$border-bottom;
             overflow: auto;
 
-            .portfolio-item {
-                height: 210px;
-                width: 300px;
-                position: relative;
+            div.portfolio-grid {
+                width: 100%;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-gap: 17px;
 
-                img.portfolio-img {
-                    height: 100%;
-                    width: 100%;
-                    border-radius: 10px;
-                    object-fit: none;
-                }
-
-                .portfolio-overlay {
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    height: 100%;
-                    width: 100%;
-                    opacity: 0;
-                    transition: .5s ease;
-                    border-radius: 10px;
-                    background-color: #222222;
-                    cursor: pointer;
-
-                    .portfolio-overlay-text {
-                        color: #ffffff;
-                        font-family: 'Open sans';
-                        font-size: 15px;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        -webkit-transform: translate(-50%, -50%);
-                        -ms-transform: translate(-50%, -50%);
-                        transform: translate(-50%, -50%);
-                        text-align: center;
+                .portfolio-item {
+                    height: 210px;
+                    width: 300px;
+                    position: relative;
+    
+                    img.portfolio-img {
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 10px;
+                        object-fit: none;
                     }
+    
+                    .portfolio-overlay {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 100%;
+                        width: 100%;
+                        opacity: 0;
+                        transition: .5s ease;
+                        border-radius: 10px;
+                        background-color: #222222;
+                        cursor: pointer;
+    
+                        .portfolio-overlay-text {
+                            color: #ffffff;
+                            font-family: 'Open sans';
+                            font-size: 15px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            -webkit-transform: translate(-50%, -50%);
+                            -ms-transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%);
+                            text-align: center;
+                        }
+                    }
+                }
+    
+                .portfolio-item:hover .portfolio-overlay {
+                    opacity: 0.8;
                 }
             }
 
-            .portfolio-item:hover .portfolio-overlay {
-                opacity: 0.8;
+            nav.pagination {
+                width: 100%;
+                margin-top: 1.8em;
+
+                div.nav-links {
+                    width: auto;
+                    margin: 0 auto;
+
+                    * {
+                        height: 30px;
+                        width: 30px;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 30px;
+                        margin: 0 0.1em;
+                    }
+
+                    a.prev {
+                        display: none;
+                    }
+
+                    a {
+                        font-family: 'Open sans';
+                        font-weight: 600;
+                        font-size: 16px;
+                        color: #222222;
+                        text-decoration: none;
+                    }
+
+                    span.current {
+                        font-family: 'Open sans';
+                        font-weight: 600;
+                        font-size: 16px;
+                        color: #ffffff;
+                        background-color: #ef4634;
+                        border-radius: 3px;
+                    }
+
+                    a.next {
+
+                        img {
+                            margin: -3px 0 0 0;
+                            height: auto;
+                            width: auto;
+                        }
+                    }
+
+                    a:hover {
+                        color: #ffffff;
+                        background-color: #ef4634;
+                        border-radius: 3px;
+                    }
+                }
             }
         }
     }

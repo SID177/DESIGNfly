@@ -9,7 +9,9 @@
  */
 
 get_header();
+get_template_part( 'template-parts/content', 'portfolio-tax' );
 ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

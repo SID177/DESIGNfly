@@ -55,7 +55,7 @@ div#portfolio-modal {
                         font-family: 'Open sans';
                         font-size: 18px;
                         color: #62585f;
-                        font-weight: 400;
+                        font-weight: 600;
                         display: grid;
                         grid-template-columns: auto auto auto;
 
@@ -94,21 +94,6 @@ div#portfolio-modal {
         }
     }
 
-    /* Caption of Modal Image */
-    // #portfolio-modal-caption {
-    //     margin: auto;
-    //     display: block;
-    //     width: 80%;
-    //     max-width: 700px;
-    //     text-align: center;
-    //     color: #ccc;
-    //     padding: 10px 0;
-    //     height: 150px;
-    //     -webkit-animation-name: zoom;
-    //     -webkit-animation-duration: 0.6s;
-    //     animation-name: zoom;
-    //     animation-duration: 0.6s;
-    // }
 }
   
 @-webkit-keyframes zoom {
@@ -119,11 +104,4 @@ div#portfolio-modal {
 @keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
-}
-  
-  /* 100% Image Width on Smaller Screens */
-@media only screen and ( max-width: 700px ) {
-    .modal-content {
-        // width: 100%;
-    }
 }

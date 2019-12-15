@@ -22,7 +22,6 @@ div#portfolio-modal {
   background-color: rgba(0, 0, 0, 0.9);
   /* Black w/ opacity */
   /* Modal Box */
-  /* Caption of Modal Image */
 }
 div#portfolio-modal div#portfolio-modal-box {
   display: table;
@@ -62,7 +61,7 @@ div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#p
   font-family: "Open sans";
   font-size: 18px;
   color: #62585f;
-  font-weight: 400;
+  font-weight: 600;
   display: grid;
   grid-template-columns: auto auto auto;
 }
@@ -106,6 +105,5 @@ div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div.p
     transform: scale(1);
   }
 }
-/* 100% Image Width on Smaller Screens */
 
 /*# sourceMappingURL=portfolio-modal.css.map */

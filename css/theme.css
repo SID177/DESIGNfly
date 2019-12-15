@@ -144,27 +144,29 @@ div#primary main#main div.main-title a:hover, div#primary main#main div.main-tit
   background-color: #ef4634;
 }
 div#primary main#main div.portfolio-block {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 17px;
   padding: 1.3em 0;
   padding-bottom: 1.8em;
   border-bottom: 1px solid #62585f;
   overflow: auto;
 }
-div#primary main#main div.portfolio-block .portfolio-item {
+div#primary main#main div.portfolio-block div.portfolio-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 17px;
+}
+div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item {
   height: 210px;
   width: 300px;
   position: relative;
 }
-div#primary main#main div.portfolio-block .portfolio-item img.portfolio-img {
+div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item img.portfolio-img {
   height: 100%;
   width: 100%;
   border-radius: 10px;
   object-fit: none;
 }
-div#primary main#main div.portfolio-block .portfolio-item .portfolio-overlay {
+div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .portfolio-overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -178,7 +180,7 @@ div#primary main#main div.portfolio-block .portfolio-item .portfolio-overlay {
   background-color: #222222;
   cursor: pointer;
 }
-div#primary main#main div.portfolio-block .portfolio-item .portfolio-overlay .portfolio-overlay-text {
+div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .portfolio-overlay .portfolio-overlay-text {
   color: #ffffff;
   font-family: "Open sans";
   font-size: 15px;
@@ -190,8 +192,52 @@ div#primary main#main div.portfolio-block .portfolio-item .portfolio-overlay .po
   transform: translate(-50%, -50%);
   text-align: center;
 }
-div#primary main#main div.portfolio-block .portfolio-item:hover .portfolio-overlay {
+div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item:hover .portfolio-overlay {
   opacity: 0.8;
+}
+div#primary main#main div.portfolio-block nav.pagination {
+  width: 100%;
+  margin-top: 1.8em;
+}
+div#primary main#main div.portfolio-block nav.pagination div.nav-links {
+  width: auto;
+  margin: 0 auto;
+}
+div#primary main#main div.portfolio-block nav.pagination div.nav-links * {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  margin: 0 0.1em;
+}
+div#primary main#main div.portfolio-block nav.pagination div.nav-links a.prev {
+  display: none;
+}
+div#primary main#main div.portfolio-block nav.pagination div.nav-links a {
+  font-family: "Open sans";
+  font-weight: 600;
+  font-size: 16px;
+  color: #222222;
+  text-decoration: none;
+}
+div#primary main#main div.portfolio-block nav.pagination div.nav-links span.current {
+  font-family: "Open sans";
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ef4634;
+  border-radius: 3px;
+}
+div#primary main#main div.portfolio-block nav.pagination div.nav-links a.next img {
+  margin: -3px 0 0 0;
+  height: auto;
+  width: auto;
+}
+div#primary main#main div.portfolio-block nav.pagination div.nav-links a:hover {
+  color: #ffffff;
+  background-color: #ef4634;
+  border-radius: 3px;
 }
 
 footer.site-footer {
