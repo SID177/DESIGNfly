@@ -16,7 +16,16 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 
 			<div class="main-title">
 				<span><?= esc_html__( "D'SIGN IS THE SOUL", 'designfly' ) ?></span>
-				<a href="<?= get_post_type_archive_link( 'designfly_portfolio' ) ?>"><?= esc_html__( 'view all', 'designfly' ) ?></a>
+				<div class="main-title-button">
+					<?php
+					$terms = get_terms( array( 'taxonomy' => 'designfly_categories', 'hide_empty' => false ) );
+					foreach ( $terms as $term ) {
+						?>
+						<a href="<?= get_term_link( $term, 'designfly_portfolio' ) ?>"><?= esc_html( $term->name ) ?></a>
+						<?php
+					}
+					?>
+				</div>
 			</div>
 
 			<div class="portfolio-block">

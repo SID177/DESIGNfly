@@ -141,17 +141,16 @@ div#primary {
             display: flex;
             justify-content: space-between;
             border-bottom: variables.$border-bottom;
+            font-family: 'Open sans';
 
             span {
-                font-family: 'Open sans';
                 font-weight: lighter;
                 font-size: 45px;
                 color: #62585f;
                 text-shadow: 2px 2px #ffffff;
             }
 
-            a {
-                font-family: 'Open sans';
+            & > a {
                 font-weight: normal;
                 font-size: 16px;
                 color: #ffffff;
@@ -164,6 +163,27 @@ div#primary {
                 top: 1.3em;
                 display: block;
                 text-decoration: none;
+            }
+            
+            div {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-gap: 0.5em;
+
+                a {
+                    font-weight: normal;
+                    font-size: 16px;
+                    color: #ffffff;
+                    background-color: #222222;
+                    padding: 10px;
+                    border-radius: 5px;
+                    line-height: 0.5;
+                    height: 1.8em;
+                    position: relative;
+                    top: 1.3em;
+                    display: block;
+                    text-decoration: none;
+                }
             }
 
             a:hover, a.selected {
@@ -343,4 +363,8 @@ footer.site-footer {
             color: #ef4634;
         }
     }
+}
+
+div#portfolio-modal {
+    display: none;
 }
