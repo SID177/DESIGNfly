@@ -86,7 +86,10 @@ div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-cont
   height: 50px;
   margin-right: 1em;
 }
-div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details span.portfolio-taxonomy-title {
+div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details a {
+  text-decoration: none;
+}
+div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details a span.portfolio-taxonomy-title {
   font-family: "Open sans";
   font-weight: bold;
   font-size: 20px;
@@ -170,19 +173,20 @@ div#primary main#main div.portfolio-block {
 div#primary main#main div.portfolio-block div.portfolio-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 17px;
+  grid-template-columns: 33% 33% 33%;
+  grid-column-gap: 1%;
+  grid-row-gap: 1em;
 }
 div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item {
-  height: 210px;
-  width: 300px;
   position: relative;
 }
 div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item img.portfolio-img {
-  height: 100%;
-  width: 100%;
+  height: 210px;
+  width: 300px;
   border-radius: 10px;
   object-fit: none;
+  padding: 0;
+  margin: 0;
 }
 div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .portfolio-overlay {
   position: absolute;
@@ -190,8 +194,8 @@ div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .po
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  width: 100%;
+  height: 210px;
+  width: 300px;
   opacity: 0;
   transition: 0.5s ease;
   border-radius: 10px;
