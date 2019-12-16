@@ -24,6 +24,89 @@
   justify-content: space-between;
 }
 
+div#primary.show-sidebar {
+  width: 100%;
+  margin-top: 3em;
+}
+div#primary.show-sidebar main#main {
+  margin: 0 auto;
+  padding-bottom: 1.8em;
+  width: 65%;
+  border-bottom: 1px solid #62585f;
+}
+div#primary.show-sidebar main#main div.blog-content {
+  display: grid;
+  grid-template-columns: 620px 270px;
+  grid-column-gap: 45px;
+}
+div#primary.show-sidebar main#main div.blog-content div.post-content div.main-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #62585f;
+  font-family: "Open sans";
+  margin-bottom: 1.5em;
+}
+div#primary.show-sidebar main#main div.blog-content div.post-content div.main-title span.title {
+  font-weight: lighter;
+  font-size: 45px;
+  color: #62585f;
+  text-shadow: 2px 2px #ffffff;
+  padding-bottom: 0.3em;
+}
+div#primary.show-sidebar main#main div.blog-content .widget .widget-title {
+  font-family: "Open sans";
+  font-weight: normal;
+  font-size: 25px;
+  color: #62585f;
+  text-shadow: 2px 2px #ffffff;
+  border-bottom: 1px solid #62585f;
+  padding-bottom: 0.25em;
+}
+div#primary.show-sidebar main#main nav.pagination {
+  width: 100%;
+  margin-top: 1.8em;
+}
+div#primary.show-sidebar main#main nav.pagination div.nav-links {
+  width: auto;
+  margin: 0 auto;
+}
+div#primary.show-sidebar main#main nav.pagination div.nav-links * {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  margin: 0 0.1em;
+}
+div#primary.show-sidebar main#main nav.pagination div.nav-links a.prev {
+  display: none;
+}
+div#primary.show-sidebar main#main nav.pagination div.nav-links a {
+  font-family: "Open sans";
+  font-weight: 600;
+  font-size: 16px;
+  color: #222222;
+  text-decoration: none;
+}
+div#primary.show-sidebar main#main nav.pagination div.nav-links span.current {
+  font-family: "Open sans";
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ef4634;
+  border-radius: 3px;
+}
+div#primary.show-sidebar main#main nav.pagination div.nav-links a.next img {
+  margin: -3px 0 0 0;
+  height: auto;
+  width: auto;
+}
+div#primary.show-sidebar main#main nav.pagination div.nav-links a:hover {
+  color: #ffffff;
+  background-color: #ef4634;
+  border-radius: 3px;
+}
+
 #searchform {
   padding-top: 25px;
   padding-left: 10px;
@@ -106,160 +189,6 @@ div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-cont
   font-size: 13px;
   color: #333333;
   line-height: 19.5px;
-}
-
-div#primary {
-  width: 100%;
-  margin-top: 3em;
-}
-div#primary main#main {
-  margin: 0 auto;
-  width: 65%;
-}
-div#primary main#main div.main-title {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #62585f;
-  font-family: "Open sans";
-}
-div#primary main#main div.main-title span {
-  font-weight: lighter;
-  font-size: 45px;
-  color: #62585f;
-  text-shadow: 2px 2px #ffffff;
-}
-div#primary main#main div.main-title > a {
-  font-weight: normal;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #222222;
-  padding: 10px;
-  border-radius: 5px;
-  line-height: 0.5;
-  height: 1.8em;
-  position: relative;
-  top: 1.3em;
-  display: block;
-  text-decoration: none;
-}
-div#primary main#main div.main-title div {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 0.5em;
-}
-div#primary main#main div.main-title div a {
-  font-weight: normal;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #222222;
-  padding: 10px;
-  border-radius: 5px;
-  line-height: 0.5;
-  height: 1.8em;
-  position: relative;
-  top: 1.3em;
-  display: block;
-  text-decoration: none;
-}
-div#primary main#main div.main-title a:hover, div#primary main#main div.main-title a.selected {
-  background-color: #ef4634;
-}
-div#primary main#main div.portfolio-block {
-  padding: 1.3em 0;
-  padding-bottom: 1.8em;
-  border-bottom: 1px solid #62585f;
-  overflow: auto;
-}
-div#primary main#main div.portfolio-block div.portfolio-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-column-gap: 1%;
-  grid-row-gap: 1em;
-}
-div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item {
-  position: relative;
-}
-div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item img.portfolio-img {
-  height: 210px;
-  width: 300px;
-  border-radius: 10px;
-  object-fit: none;
-  padding: 0;
-  margin: 0;
-}
-div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .portfolio-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 210px;
-  width: 300px;
-  opacity: 0;
-  transition: 0.5s ease;
-  border-radius: 10px;
-  background-color: #222222;
-  cursor: pointer;
-}
-div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .portfolio-overlay .portfolio-overlay-text {
-  color: #ffffff;
-  font-family: "Open sans";
-  font-size: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item:hover .portfolio-overlay {
-  opacity: 0.8;
-}
-div#primary main#main div.portfolio-block nav.pagination {
-  width: 100%;
-  margin-top: 1.8em;
-}
-div#primary main#main div.portfolio-block nav.pagination div.nav-links {
-  width: auto;
-  margin: 0 auto;
-}
-div#primary main#main div.portfolio-block nav.pagination div.nav-links * {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  text-align: center;
-  line-height: 30px;
-  margin: 0 0.1em;
-}
-div#primary main#main div.portfolio-block nav.pagination div.nav-links a.prev {
-  display: none;
-}
-div#primary main#main div.portfolio-block nav.pagination div.nav-links a {
-  font-family: "Open sans";
-  font-weight: 600;
-  font-size: 16px;
-  color: #222222;
-  text-decoration: none;
-}
-div#primary main#main div.portfolio-block nav.pagination div.nav-links span.current {
-  font-family: "Open sans";
-  font-weight: 600;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #ef4634;
-  border-radius: 3px;
-}
-div#primary main#main div.portfolio-block nav.pagination div.nav-links a.next img {
-  margin: -3px 0 0 0;
-  height: auto;
-  width: auto;
-}
-div#primary main#main div.portfolio-block nav.pagination div.nav-links a:hover {
-  color: #ffffff;
-  background-color: #ef4634;
-  border-radius: 3px;
 }
 
 footer.site-footer {
