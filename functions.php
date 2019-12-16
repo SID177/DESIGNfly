@@ -192,7 +192,7 @@ function designfly_scripts() {
 			wp_enqueue_style( 'designfly-front-page-style', get_template_directory_uri() . '/css/front-page.css' );
 		}
 
-		wp_enqueue_style( 'designfly-portfolio-modal', get_template_directory_uri() . '/css/portfolio-modal.css' );
+		wp_enqueue_style( 'designfly-portfolio', get_template_directory_uri() . '/css/portfolio.css' );
 		wp_enqueue_script( 'designfly-portfolio-modal', get_template_directory_uri() . '/js/portfolio-modal.js', array( 'jquery' ), '20151215', true );
 	}
 
