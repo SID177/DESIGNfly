@@ -172,6 +172,41 @@ function designfly_widgets_init() {
 add_action( 'widgets_init', 'designfly_widgets_init' );
 
 /**
+ * Replaces default read more text with READ MORE link.
+ * 
+ * @param string $more Default read more string.
+ * 
+ * @return string New read more string.
+ */
+function designfly_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+            get_permalink( get_the_ID() ),
+            esc_html__( 'READ MORE', 'designfly' )
+        );
+	}
+
+	return $more;
+}
+add_filter( 'excerpt_more', 'designfly_excerpt_more' );
+
+/**
+ * Replaces default read more text length.
+ * 
+ * @param int $length Default read more text length.
+ * 
+ * @return int New read more text length.
+ */
+function designfly_excerpt_length( $length ) {
+	if ( ! is_single() ) {
+		return 35;
+	}
+
+	return $length;
+}
+add_filter( 'excerpt_length', 'designfly_excerpt_length' );
+
+/**
  * Enqueue scripts and styles.
  */
 function designfly_scripts() {
