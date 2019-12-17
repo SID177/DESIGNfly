@@ -85,6 +85,7 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   margin: 0;
   font-size: 20px;
   padding: 0.55em 1em;
+  overflow: auto;
 }
 div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post header.entry-header span.entry-meta {
   margin: 0;
@@ -136,10 +137,14 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   padding-bottom: 0.35em;
   border-bottom: 1px solid #62585f;
 }
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content-header span.author {
+  overflow: auto;
+}
 div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content-header span.author a {
   color: #ef4634;
 }
 div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content-header span.number-of-comments {
+  overflow: auto;
   color: #ef4634;
 }
 div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content {

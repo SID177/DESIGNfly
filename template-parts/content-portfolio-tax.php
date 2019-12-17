@@ -13,7 +13,11 @@
 		<div class="portfolio-taxonomy-content">
 
 			<?php
-			$terms = get_terms( array( 'taxonomy' => 'designfly_categories', 'hide_empty' => false ) );
+			$terms = get_terms( array( 
+				'taxonomy'   => 'designfly_categories', 
+				'hide_empty' => false,
+				'number'     => 3
+			) );
 			
 			foreach ( $terms as $term ) {
 				?>
