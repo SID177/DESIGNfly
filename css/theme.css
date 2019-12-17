@@ -1,5 +1,9 @@
+@charset "UTF-8";
 /*
 * This file contains data variables used across the site.
+*/
+/*
+* This file contains reusable css.
 */
 /*
 * This is a common css file for entire theme.
@@ -61,16 +65,16 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   padding: 0;
   overflow: auto;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article {
   overflow: auto;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post a.post-link {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article a.post-link {
   text-decoration: none;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post a.post-link:hover header.entry-header {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article a.post-link:hover header.entry-header {
   background-color: #ef4634;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post header.entry-header {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article header.entry-header {
   width: 100%;
   height: 50px;
   background-color: #222222;
@@ -80,21 +84,21 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   color: #ffffff;
   border-radius: 3px;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post header.entry-header .entry-title {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article header.entry-header .entry-title {
   width: 100%;
   margin: 0;
   font-size: 20px;
   padding: 0.55em 1em;
   overflow: auto;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post header.entry-header span.entry-meta {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article header.entry-header span.entry-meta {
   margin: 0;
   padding: 0.4em 0.9em;
   border-right: 1px solid rgba(255, 255, 255, 0.7);
   width: fit-content;
   height: inherit;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post header.entry-header span.entry-meta span.post-day {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article header.entry-header span.entry-meta span.post-day {
   margin: 0;
   padding: 0;
   font-size: 25px;
@@ -102,7 +106,7 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   display: block;
   line-height: 1;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post header.entry-header span.entry-meta span.post-month {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article header.entry-header span.entry-meta span.post-month {
   margin: 0;
   padding: 0;
   font-size: 14px;
@@ -112,54 +116,166 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   position: relative;
   top: -0.55em;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content {
   margin-top: 1em;
   display: flex;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content img.post-thumbnail {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content img.post-thumbnail {
   height: 153px;
   width: 220px;
   border-radius: 10px;
   object-fit: cover;
   margin-right: 1em;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block {
   font-family: "Open sans";
   font-weight: normal;
   font-size: 14px;
   color: #62585f;
   overflow: auto;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content-header {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block div.post-content-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5em;
   padding-bottom: 0.35em;
+  font-size: 12px;
   border-bottom: 1px solid #62585f;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content-header span.author {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block div.post-content-header span.author {
   overflow: auto;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content-header span.author a {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block div.post-content-header span.author a {
   color: #ef4634;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content-header span.number-of-comments {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block div.post-content-header span.number-of-comments {
   overflow: auto;
   color: #ef4634;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block div.post-content {
   overflow: auto;
   line-height: 21px;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content p {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block div.post-content p {
   margin: 0;
 }
-div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article.post div.entry-content div.post-content-block div.post-content p a.read-more {
+div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block div.post-content p a.read-more {
   color: #ef4634;
   margin-top: 1em;
   display: block;
 }
-div#primary.show-sidebar main#main div.blog-content .widget .widget-title {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content {
+  font-family: "Open sans";
+  color: #62585f;
+  font-weight: normal;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article header.entry-header span.entry-title {
+  font-size: 35px;
+  text-shadow: 2px 2px #ffffff;
+  margin-bottom: 0.4em;
+  display: block;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article header.entry-header div.entry-header-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.35em;
+  font-size: 12px;
+  border-bottom: 1px solid #62585f;
+  margin-bottom: 1em;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article header.entry-header div.entry-header-meta span.author {
+  overflow: auto;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article header.entry-header div.entry-header-meta span.author a {
+  color: #ef4634;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article header.entry-header div.entry-header-meta span.number-of-comments {
+  overflow: auto;
+  color: #ef4634;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article div.entry-content {
+  font-size: 14px;
+  line-height: 21px;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article div.entry-content img {
+  width: 620px;
+  border-radius: 3px;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article div.entry-footer {
+  font-size: 13px;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content article div.entry-footer a {
+  color: #ef4634;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments {
+  margin-top: 1.5em;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments span.comments-title {
+  display: block;
+  width: 100%;
+  padding: 0.3em 0;
+  font-size: 18px;
+  border-top: 1px solid #62585f;
+  border-bottom: 1px solid #62585f;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #62585f;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list ul.children {
+  list-style: none;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond .comment-reply-title {
+  font-weight: normal;
+  font-size: 18px;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform p.comment-form-comment label {
+  display: none;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform p.comment-form-comment textarea {
+  width: 620px;
+  height: 90px;
+  border: 1px solid #62585f;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform div.comment-meta-fields {
+  display: flex;
+  justify-content: space-between;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform div.comment-meta-fields p {
+  width: 31.4%;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform div.comment-meta-fields label {
+  font-size: 14px;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform div.comment-meta-fields input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #62585f;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform p.form-submit {
+  float: right;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform p.form-submit input#submit {
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #222222;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 1;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area {
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 2em;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget {
+  overflow: auto;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget .widget-title {
   font-family: "Open sans";
   font-weight: normal;
   font-size: 25px;
@@ -167,6 +283,33 @@ div#primary.show-sidebar main#main div.blog-content .widget .widget-title {
   text-shadow: 2px 2px #ffffff;
   border-bottom: 1px solid #62585f;
   padding-bottom: 0.25em;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_archive ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 0.7em;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_archive ul li:before {
+  content: "›";
+  font-size: 13px;
+  margin-right: 0.3em;
+  font-weight: 600;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_archive ul li {
+  padding: 0;
+  margin: 0;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_archive ul li a {
+  font-weight: 600;
+  font-size: 13px;
+  color: #62585f;
+  text-decoration: none;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_archive ul li:hover a {
+  color: #ef4634;
 }
 div#primary.show-sidebar main#main nav.pagination {
   width: 100%;

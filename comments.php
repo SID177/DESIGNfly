@@ -26,36 +26,37 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<span class="comments-title">
+			<?= esc_html_x( 'Comments', 'post comments', 'designfly' ) ?>
 			<?php
-			$designfly_comment_count = get_comments_number();
-			if ( '1' === $designfly_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'designfly' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $designfly_comment_count, 'comments title', 'designfly' ) ),
-					number_format_i18n( $designfly_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
+			// $designfly_comment_count = get_comments_number();
+			// if ( '1' === $designfly_comment_count ) {
+			// 	printf(
+			// 		/* translators: 1: title. */
+			// 		esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'designfly' ),
+			// 		'<span>' . get_the_title() . '</span>'
+			// 	);
+			// } else {
+			// 	printf( // WPCS: XSS OK.
+			// 		/* translators: 1: comment count number, 2: title. */
+			// 		esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $designfly_comment_count, 'comments title', 'designfly' ) ),
+			// 		number_format_i18n( $designfly_comment_count ),
+			// 		'<span>' . get_the_title() . '</span>'
+			// 	);
+			// }
 			?>
-		</h2><!-- .comments-title -->
+		</span><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list">
 			<?php
 			wp_list_comments( array(
-				'style'      => 'ol',
+				'style'      => 'ul',
 				'short_ping' => true,
 			) );
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php
 		the_comments_navigation();
@@ -69,7 +70,18 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	comment_form( array(
+		'fields' => array(
+			'author' => '<div class="comment-meta-fields"><p class="comment-form-author"><label for="author">' . esc_html_x( 'Name', 'comment form name', 'designfly' ) . '</label> <input id="author" name="author" type="text" value="" maxlength="245" required="required" /></p>',
+			'email' => '<p class="comment-form-email"><label for="email">' . esc_html_x( 'Email', 'comment form email', 'designfly' ) . '</label> <input id="email" name="email" type="email" value="" maxlength="100" aria-describedby="email-notes" required=required /></p>',
+			'url' => '<p class="comment-form-url"><label for="url">' . esc_html_x( 'Website', 'comment form website', 'designfly' ) . '</label> <input id="url" name="url" type="url" value="" maxlength="200" /></p></div>',
+			'cookies' => '',
+		),
+		'title_reply' => esc_html__( 'Post your comment', 'designfly' ),
+		'label_submit' => esc_html__( 'Submit', 'designfly' ),
+		'logged_in_as' => '',
+		'comment_notes_before' => '',
+	) );
 	?>
 
 </div><!-- #comments -->

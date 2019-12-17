@@ -206,6 +206,7 @@ function designfly_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'designfly_excerpt_length' );
 
+
 /**
  * Enqueue scripts and styles.
  */

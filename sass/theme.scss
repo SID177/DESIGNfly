@@ -3,6 +3,7 @@
 */
 
 @use 'variables';
+@use 'mixins';
 
 .site-header {
 	height: 105px;
@@ -68,7 +69,7 @@ div#primary.show-sidebar {
                     padding: 0;
                     overflow: auto;
 
-                    article.post {
+                    article {
                         overflow: auto;
 
                         a.post-link {
@@ -146,24 +147,7 @@ div#primary.show-sidebar {
                                 overflow: auto;
 
                                 div.post-content-header {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    margin-bottom: 0.5em;
-                                    padding-bottom: 0.35em;
-                                    border-bottom: variables.$border-bottom;
-
-                                    span.author {
-                                        overflow: auto;
-
-                                        a {
-                                            color: #ef4634;
-                                        }
-                                    }
-
-                                    span.number-of-comments {
-                                        overflow: auto;
-                                        color: #ef4634;
-                                    }
+                                    @include mixins.created-by-posted-on();
                                 }
 
                                 div.post-content {
@@ -186,16 +170,179 @@ div#primary.show-sidebar {
                 }
             }
 
-            .widget {
+            div.single-post-content {
+                font-family: 'Open sans';
+                color: #62585f;
+                font-weight: normal;
 
-                .widget-title {
-                    font-family: 'Open sans';
-                    font-weight: normal;
-                    font-size: 25px;
-                    color: #62585f;
-                    text-shadow: 2px 2px #ffffff;
-                    border-bottom: variables.$border-bottom;
-                    padding-bottom: 0.25em;
+                article {
+
+                    header.entry-header {
+
+                        span.entry-title {
+                            font-size: 35px;
+                            text-shadow: 2px 2px #ffffff;
+                            margin-bottom: 0.4em;
+                            display: block;
+                        }
+
+                        div.entry-header-meta {
+                            @include mixins.created-by-posted-on();
+                            margin-bottom: 1em;
+                        }
+                    }
+
+                    div.entry-content {
+                        font-size: 14px;
+                        line-height: 21px;
+
+                        img {
+                            width: 620px;
+                            border-radius: 3px;
+                        }
+                    }
+
+                    div.entry-footer {
+                        font-size: 13px;
+
+                        a {
+                            color: #ef4634;
+                        }
+                    }
+                }
+
+                div#comments {
+                    margin-top: 1.5em;
+
+                    span.comments-title {
+                        display: block;
+                        width: 100%;
+                        padding: 0.3em 0;
+                        font-size: 18px;
+                        border-top: variables.$border-bottom;
+                        border-bottom: variables.$border-bottom;
+                    }
+
+                    ul.comment-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 1.5em 0;
+                        padding-bottom: 1em;
+                        border-bottom: variables.$border-bottom;
+
+                        ul.children {
+                            list-style: none;
+                            // padding: 0;
+                            // margin: 1em 0;
+                        }
+                    }
+
+                    div.comment-respond {
+
+                        .comment-reply-title {
+                            font-weight: normal;
+                            font-size: 18px;
+                        }
+
+                        form#commentform {
+                            p.comment-form-comment {
+                                label { display: none; }
+
+                                textarea {
+                                    width: 620px;
+                                    height: 90px;
+                                    border: variables.$border-bottom;
+                                }
+                            }
+
+                            div.comment-meta-fields {
+                                display: flex;
+                                justify-content: space-between;
+
+                                p {
+                                    width: 31.4%;
+                                }
+
+                                label {
+                                    font-size: 14px;
+                                }
+
+                                input {
+                                    width: 100%;
+                                    height: 30px;
+                                    border: variables.$border-bottom;
+                                }
+                            }
+
+                            p.form-submit {
+                                float: right;
+                                
+                                input#submit {
+                                    font-size: 14px;
+                                    color: #ffffff;
+                                    background-color: #222222;
+                                    padding: 10px;
+                                    border-radius: 5px;
+                                    line-height: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            aside.widget-area {
+                display: grid;
+                grid-template-columns: auto;
+                grid-row-gap: 2em;
+
+                .widget {
+                    overflow: auto;
+    
+                    .widget-title {
+                        font-family: 'Open sans';
+                        font-weight: normal;
+                        font-size: 25px;
+                        color: #62585f;
+                        text-shadow: 2px 2px #ffffff;
+                        border-bottom: variables.$border-bottom;
+                        padding-bottom: 0.25em;
+                    }
+                }
+    
+                .widget_archive {
+    
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-row-gap: 0.7em;
+    
+                        li:before {
+                            content: "\203A";
+                            font-size: 13px;
+                            margin-right: 0.3em;
+                            font-weight: 600;
+                        }
+    
+                        li {
+                            padding: 0;
+                            margin: 0;
+    
+                            a {
+                                font-weight: 600;
+                                font-size: 13px;
+                                color: #62585f;
+                                text-decoration: none;
+                            }
+                        }
+    
+                        li:hover a {
+                            color: #ef4634;
+                        }
+                    }
                 }
             }
         }
