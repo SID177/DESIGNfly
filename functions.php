@@ -219,7 +219,7 @@ function designfly_scripts() {
 	wp_enqueue_style( 'designfly-theme', get_template_directory_uri() . '/css/theme.css' );
 	wp_enqueue_script( 'designfly-theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), '20151215', true );
 
-	wp_enqueue_style( 'designfly-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap' );
+	wp_enqueue_style( 'designfly-font', get_template_directory_uri() . '/css/open-sans.css' );
 
 	wp_enqueue_script( 'designfly-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
