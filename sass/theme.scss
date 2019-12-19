@@ -385,6 +385,75 @@ div#primary.show-sidebar {
                         text-shadow: 2px 2px #ffffff;
                         border-bottom: variables.$border;
                         padding-bottom: 0.25em;
+                        overflow: auto;
+                    }
+                }
+
+                div.portfolio-widget-block {
+                    display: grid;
+                    grid-template-columns: 60px 60px 60px 60px;
+                    grid-gap: 10px;
+                    margin-top: 1em;
+
+                    img {
+                        height: 60px;
+                        width: 60px;
+                        border-radius: 5px;
+                        object-fit: cover;
+                    }
+                }
+
+                div.designfly-posts-widget-block {
+                    display: grid;
+                    grid-template-columns: 270px;
+                    grid-row-gap: 10px;
+                    font-family: 'Open sans';
+                    font-weight: normal;
+                    color: #62585f;
+                    margin-top: 1em;
+
+                    div.widget-post-block {
+                        display: flex;
+
+                        img {
+                            height: 45px;
+                            width: 45px;
+                            border-radius: 3px;
+                            object-fit: cover;
+                            margin-right: 10px;
+                        }
+
+                        div.widget-post-details {
+                            position: relative;
+                            top: -0.3em;
+
+                            span.post-title {
+                                font-size: 14px;
+                                display: block;
+                                overflow: auto;
+
+                                a.post-title-link {
+                                    color: #62585f;
+                                    text-decoration: none;
+                                }
+
+                                a.post-title-link:hover {
+                                    color: #ef4634;
+                                }
+                            }
+
+                            span.post-meta {
+                                font-size: 12px;
+
+                                span.author {
+                                    overflow: auto;
+                            
+                                    a {
+                                        color: #ef4634;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
     

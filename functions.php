@@ -154,24 +154,6 @@ function designfly_init() {
 add_action( 'init', 'designfly_init' );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function designfly_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'designfly' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'designfly' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'designfly_widgets_init' );
-
-/**
  * Replaces default read more text with READ MORE link.
  * 
  * @param string $more Default read more string.
@@ -236,6 +218,18 @@ function designfly_scripts() {
 	}
 
 	if ( is_singular() && comments_open() ) {
+		global $post;
+		
+		if ( 'post' === $post->post_type ) {
+			$count = (int) get_post_meta( $post->ID, 'designfly_post_views_count', true );
+			if ( empty( $count ) ) {
+				$count = 0;
+			}
+			$count ++;
+
+			update_post_meta( $post->ID, 'designfly_post_views_count', $count );
+		}
+
 		wp_enqueue_script( 'font-awesome', get_template_directory_uri() . '/js/font-awesome-icons.js' );
 
 		if ( get_option( 'thread_comments' ) ) {
@@ -315,6 +309,37 @@ function designfly_custom_comment_block( $comment, $args, $depth ) {
 		</article><!-- .comment-body -->
 	<?php
 }
+
+/**
+ * Define Portfolio widget.
+ */
+require get_template_directory() . '/inc/widgets/class-designfly-portfolio-widget.php';
+
+/**
+ * Define posts widget.
+ */
+require get_template_directory() . '/inc/widgets/class-designfly-posts-widget.php';
+
+/**
+ * Register widget area and widgets.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function designfly_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'designfly' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'designfly' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_widget( 'DESIGNfly_Portfolio_Widget' );
+	register_widget( 'DESIGNfly_Posts_Widget' );
+}
+add_action( 'widgets_init', 'designfly_widgets_init' );
 
 /**
  * Implement the Custom Header feature.

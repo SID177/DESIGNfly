@@ -11,8 +11,13 @@ if ( ! function_exists( 'designfly_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function designfly_posted_on() {
-		$posted_on = get_the_date( 'd M Y' );
+	function designfly_posted_on( $current_post = false ) {
+		if ( empty( $current_post ) ) {
+			global $post;
+			$current_post = $post;
+		}
+
+		$posted_on = get_the_date( 'd M Y', $current_post );
 
 		echo '<span class="posted-on">' . esc_html_x( 'on', 'posted on', 'designfly' ) . ' ' . $posted_on . '</span>'; // WPCS: XSS OK.
 
@@ -23,11 +28,16 @@ if ( ! function_exists( 'designfly_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function designfly_posted_by() {
+	function designfly_posted_by( $current_post = false ) {
+		if ( empty( $current_post ) ) {
+			global $post;
+			$current_post = $post;
+		}
+
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'designfly' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID', $current_post->post_author ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $current_post->post_author ) ) . '</a></span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
