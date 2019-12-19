@@ -50,13 +50,7 @@ if ( post_password_required() ) {
 		<?php the_comments_navigation(); ?>
 
 		<ul class="comment-list">
-			<?php
-			// wp_list_comments( array(
-			// 	'style'      => 'ul',
-			// 	'short_ping' => true,
-			// ) );
-			wp_list_comments( 'callback=custom_comment_block' );
-			?>
+			<?php wp_list_comments( 'callback=designfly_custom_comment_block' ); ?>
 		</ul><!-- .comment-list -->
 
 		<?php
