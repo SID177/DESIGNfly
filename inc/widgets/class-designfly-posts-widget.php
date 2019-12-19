@@ -36,7 +36,7 @@ class DESIGNfly_Posts_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$qry_args = array(
 			'post_type'      => 'post',
-            'posts_per_page' => ( ! empty( $instance['nois'] ) ? empty( $instance['nois'] ) : $this->default_nois ),
+            'numberposts'    => ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois ),
             'post_status'    => 'publish'
 		);
 

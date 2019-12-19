@@ -33,9 +33,9 @@ class DESIGNfly_Portfolio_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
         $posts = get_posts( array(
-            'post_type'      => 'designfly_portfolio',
-            'posts_per_page' => ( ! empty( $instance['nois'] ) ? empty( $instance['nois'] ) : $this->default_nois ),
-            'post_status'    => 'publish'
+            'post_type'   => 'designfly_portfolio',
+            'numberposts' => ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois ),
+            'post_status' => 'publish'
         ) );
 
         if ( ! empty( $posts ) ) :
@@ -64,7 +64,7 @@ class DESIGNfly_Portfolio_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Portfolio', 'designfly' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 		$nois  = ! empty( $instance['nois'] ) ? $instance['nois'] : esc_html__( $this->default_nois, 'designfly' );
 		?>
 		<p>
@@ -91,7 +91,7 @@ class DESIGNfly_Portfolio_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-		$instance['nois']  = ( ! empty( $new_instance['nois'] ) ) ? sanitize_text_field( $new_instance['nois'] ) : '';
+		$instance['nois']  = ( ! empty( $new_instance['nois'] ) ) ? sanitize_text_field( $new_instance['nois'] ) : $this->default_nois;
 
 		return $instance;
 	}

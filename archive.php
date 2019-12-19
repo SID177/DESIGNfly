@@ -21,7 +21,7 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 				<div class="blog-content">
 					<div class="post-content">
 						<div class="main-title">
-							<span class="title"><?= esc_html__( "LET'S BLOG", 'designfly' ) ?></span>
+							<span class="title"><?php the_archive_title(); ?></span>
 						</div>
 						<div class="post-grid">
 							<?php
@@ -35,7 +35,7 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 								* If you want to override this in a child theme, then include a file
 								* called content-___.php (where ___ is the Post Type name) and that will be used instead.
 								*/
-								get_template_part( 'template-parts/content', get_post_type() );
+								get_template_part( 'template-parts/content', 'archive' );
 
 							endwhile;
 							?>

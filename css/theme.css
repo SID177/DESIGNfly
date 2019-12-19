@@ -133,6 +133,7 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   font-size: 14px;
   color: #62585f;
   overflow: auto;
+  width: 100%;
 }
 div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content div.post-content-block div.post-content-header {
   display: flex;

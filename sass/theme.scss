@@ -145,6 +145,7 @@ div#primary.show-sidebar {
                                 font-size: 14px;
                                 color: #62585f;
                                 overflow: auto;
+                                width: 100%;
 
                                 div.post-content-header {
                                     @include mixins.created-by-posted-on();
