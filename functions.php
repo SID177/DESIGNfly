@@ -214,7 +214,10 @@ function designfly_scripts() {
 
 	wp_enqueue_style( 'designfly-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'dashicons' );
+
 	wp_enqueue_style( 'designfly-theme', get_template_directory_uri() . '/css/theme.css' );
+	wp_enqueue_script( 'designfly-theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), '20151215', true );
 
 	wp_enqueue_style( 'designfly-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap' );
 
@@ -229,14 +232,102 @@ function designfly_scripts() {
 		}
 
 		wp_enqueue_style( 'designfly-portfolio', get_template_directory_uri() . '/css/portfolio.css' );
-		wp_enqueue_script( 'designfly-portfolio-modal', get_template_directory_uri() . '/js/portfolio-modal.js', array( 'jquery' ), '20151215', true );
+		wp_enqueue_script( 'designfly-portfolio-modal', get_template_directory_uri() . '/js/portfolio-modal.js', array( 'designfly-theme' ), '20151215', true );
 	}
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	if ( is_singular() && comments_open() ) {
+		wp_enqueue_script( 'font-awesome', get_template_directory_uri() . '/js/font-awesome-icons.js' );
+
+		if ( get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'designfly_scripts' );
+
+function custom_comment_block($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+
+		$commenter = wp_get_current_commenter();
+		if ( $commenter['comment_author_email'] ) {
+			$moderation_note = esc_html__( 'Your comment is awaiting moderation.', 'designfly' );
+		} else {
+			$moderation_note = esc_html__( 'Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'designfly' );
+		}
+
+		?>
+		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( '', $comment ); ?>>
+			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+				<span class="dashicons dashicons-testimonial"></span>
+				<div class="comment-block">
+					<footer class="comment-meta">
+						<?php 
+						$author_link = '';
+						if ( empty( $comment->comment_author_url ) && ! empty( $comment->user_id ) ) {
+							$author_link = '<a href="' . esc_url( get_author_posts_url( $comment->user_id ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $comment->user_id ) ) . '</a>';
+						} else {
+							$author_link = get_comment_author_link( $comment );
+						}
+
+						$author_html  = '<span class="comment-author">' . $author_link . '</span>';
+						$said_on_html = ' <span class="said-on">' . esc_html_x( 'said on', 'designfly comment said on', 'designfly' ) . '</span> ';
+						$comment_date = get_comment_date( 'F d, Y', $comment ) . ' ' . esc_html_x( 'at', 'designfly comment at', 'designfly' ) . ' ' . get_comment_date( 'H:i a', $comment );
+						
+						echo $author_html . $said_on_html . $comment_date;
+						?>
+						<!-- <div class="comment-author vcard">
+							<?php
+								printf(
+									/* translators: %s: Comment author link. */
+									__( '%s <span class="said-on">said on</span>' ),
+									sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
+								);
+							?>
+						</div> -->
+						<!-- .comment-author -->
+
+						<!-- <div class="comment-metadata">
+							<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
+								<time datetime="<?php comment_time( 'c' ); ?>">
+									<?php
+										/* translators: 1: Comment date, 2: Comment time. */
+										printf( __( '%1$s at %2$s' ), get_comment_date( '', $comment ), get_comment_time() );
+									?>
+								</time>
+							</a>
+							<?php edit_comment_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+						</div> -->
+						<!-- .comment-metadata -->
+
+						<?php if ( '0' == $comment->comment_approved ) : ?>
+						<em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
+						<?php endif; ?>
+					</footer><!-- .comment-meta -->
+
+					<div class="comment-content">
+						<?php comment_text(); ?>
+					</div><!-- .comment-content -->
+
+					<?php
+					comment_reply_link(
+						array_merge(
+							$args,
+							array(
+								'reply_text' => esc_html_x( 'reply', 'comment reply', 'designfly' ),
+								'add_below'  => 'div-comment',
+								'depth'      => $depth,
+								'max_depth'  => $args['max_depth'],
+								'before'     => '<div class="reply"><i class="fas fa-share"></i> ',
+								'after'      => '</div>',
+							)
+						)
+					);
+					?>
+				</div>
+			</article><!-- .comment-body -->
+		<?php
+}
 
 /**
  * Implement the Custom Header feature.

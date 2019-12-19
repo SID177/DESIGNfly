@@ -222,44 +222,104 @@ div#primary.show-sidebar main#main div.blog-content div.single-post-content div#
 div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list {
   list-style: none;
   padding: 0;
-  margin: 1.5em 0;
-  padding-bottom: 1em;
-  border-bottom: 1px solid #62585f;
+  margin-bottom: 1em;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body {
+  padding: 1em 0.5em;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body span.dashicons {
+  float: left;
+  margin-top: 0.1em;
+  opacity: 0.4;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block {
+  margin-left: 1.5em;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block footer.comment-meta {
+  font-size: 13px;
+  margin-bottom: 0.4em;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block footer.comment-meta span.comment-author {
+  color: #ef4634;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block footer.comment-meta span.comment-author a {
+  color: #ef4634;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block footer.comment-meta .comment-awaiting-moderation {
+  display: block;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block div.comment-content {
+  font-size: 14px;
+  line-height: 21px;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block div.comment-content p:last-child {
+  margin-bottom: 0;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block div.reply {
+  font-size: 14px;
+  line-height: 21px;
+  text-align: right;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block div.reply i {
+  font-size: 12px;
+  opacity: 0.4;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment article.comment-body div.comment-block div.reply a {
+  color: #62585f;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list li.comment.current-comment {
+  background-color: #ffffff;
 }
 div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list ul.children {
   list-style: none;
+  padding-left: 1em;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond .comment-reply-title {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments ul.comment-list ul.children article.comment-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond {
+  padding-top: 1em;
+  border-top: 1px solid #62585f;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond #reply-title > small {
+  float: right;
+  font-size: 13px;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond #reply-title > small a {
+  color: #ef4634;
+}
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond .comment-reply-title {
   font-weight: normal;
   font-size: 18px;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform p.comment-form-comment label {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond form#commentform p.comment-form-comment label {
   display: none;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform p.comment-form-comment textarea {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond form#commentform p.comment-form-comment textarea {
   width: 620px;
   height: 90px;
   border: 1px solid #62585f;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform div.comment-meta-fields {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond form#commentform div.comment-meta-fields {
   display: flex;
   justify-content: space-between;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform div.comment-meta-fields p {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond form#commentform div.comment-meta-fields p {
   width: 31.4%;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform div.comment-meta-fields label {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond form#commentform div.comment-meta-fields label {
   font-size: 14px;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform div.comment-meta-fields input {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond form#commentform div.comment-meta-fields input {
   width: 100%;
   height: 30px;
   border: 1px solid #62585f;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform p.form-submit {
-  float: right;
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond form#commentform p.form-submit {
+  text-align: right;
 }
-div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div.comment-respond form#commentform p.form-submit input#submit {
+div#primary.show-sidebar main#main div.blog-content div.single-post-content div#comments div#respond form#commentform p.form-submit input#submit {
   font-size: 14px;
   color: #ffffff;
   background-color: #222222;
@@ -271,6 +331,7 @@ div#primary.show-sidebar main#main div.blog-content aside.widget-area {
   display: grid;
   grid-template-columns: auto;
   grid-row-gap: 2em;
+  height: fit-content;
 }
 div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget {
   overflow: auto;
@@ -283,6 +344,10 @@ div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget .w
   text-shadow: 2px 2px #ffffff;
   border-bottom: 1px solid #62585f;
   padding-bottom: 0.25em;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_archive {
+  height: 10em;
+  overflow: auto;
 }
 div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_archive ul {
   list-style: none;

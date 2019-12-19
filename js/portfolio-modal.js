@@ -1,5 +1,4 @@
 // Get the modal
-var $ = jQuery;
 
 $( document ).ready( function() {
     var modal = $( '#portfolio-modal' );

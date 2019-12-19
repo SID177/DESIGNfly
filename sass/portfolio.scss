@@ -15,7 +15,7 @@ div#primary {
         div.main-title {
             display: flex;
             justify-content: space-between;
-            border-bottom: variables.$border-bottom;
+            border-bottom: variables.$border;
             font-family: 'Open sans';
 
             span {
@@ -69,7 +69,7 @@ div#primary {
         div.portfolio-block {
             padding: 1.3em 0;
             padding-bottom: 1.8em;
-            border-bottom: variables.$border-bottom;
+            border-bottom: variables.$border;
             overflow: auto;
 
             div.portfolio-grid {
