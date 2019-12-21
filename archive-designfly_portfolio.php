@@ -21,7 +21,7 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 					$terms = get_terms( array( 'taxonomy' => 'designfly_categories', 'hide_empty' => false, 'number' => 3 ) );
 					foreach ( $terms as $term ) {
 						?>
-						<a href="<?= get_term_link( $term, 'designfly_portfolio' ) ?>"><?= esc_html( $term->name ) ?></a>
+						<a class="portfolio-taxonomy-buttons" href="<?= get_term_link( $term, 'designfly_portfolio' ) ?>"><?= esc_html( $term->name ) ?></a>
 						<?php
 					}
 					?>

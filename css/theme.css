@@ -352,6 +352,7 @@ div#primary.show-sidebar main#main div.blog-content aside.widget-area div.portfo
   grid-template-columns: 60px 60px 60px 60px;
   grid-gap: 10px;
   margin-top: 1em;
+  overflow: auto;
 }
 div#primary.show-sidebar main#main div.blog-content aside.widget-area div.portfolio-widget-block img {
   height: 60px;
@@ -613,5 +614,240 @@ footer.site-footer div.copyright-div a.copyright-rtcamp {
 div#portfolio-modal {
   display: none;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .site-header .site-header-content {
+    flex-direction: column;
+    margin-bottom: 1em;
+    width: 95%;
+  }
+  .site-header .site-header-content .site-branding {
+    text-align: center;
+  }
+  .site-header .site-header-content div.site-navigation-search nav#site-navigation {
+    padding-top: 0 !important;
+  }
+  .site-header .site-header-content div.site-navigation-search div#searchform {
+    padding-top: 40px !important;
+  }
+  .site-header .site-header-content div.site-navigation-search div#searchform form {
+    display: flex;
+  }
+  .site-header .site-header-content div.site-navigation-search div#searchform form input.search-submit {
+    top: 0;
+    margin-left: 0.2em;
+  }
+
+  div.front-header {
+    height: 450px !important;
+  }
+  div.front-header > img {
+    height: auto !important;
+    width: 100%;
+  }
+  div.front-header > div.text-block {
+    top: -28% !important;
+  }
+  div.front-header > div.text-block div {
+    font-size: 9vw !important;
+  }
+  div.front-header > div.text-block p {
+    font-size: 4vw !important;
+    width: 95% !important;
+  }
+
+  div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content {
+    width: 95%;
+  }
+  div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block {
+    display: block;
+    justify-content: unset;
+    text-align: center;
+  }
+  div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block img {
+    margin-right: 0;
+  }
+  div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details span.portfolio-taxonomy-title {
+    font-size: 4vw !important;
+  }
+  div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content div.portfolio-taxonomy-block div.portfolio-taxonomy-details p.portfolio-taxonomy-description {
+    display: none;
+  }
+
+  div#primary main#main {
+    width: 95% !important;
+  }
+  div#primary main#main div.main-title span {
+    font-size: 9vw !important;
+  }
+  div#primary main#main div.main-title a.view-all-button {
+    font-size: 4vw !important;
+    width: 100px;
+    text-align: center;
+  }
+  div#primary main#main div.main-title div {
+    grid-template-columns: auto !important;
+  }
+  div#primary main#main div.main-title div a.portfolio-taxonomy-buttons {
+    font-size: 4vw !important;
+    top: 0 !important;
+    width: auto;
+    text-align: center;
+  }
+  div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item img.portfolio-img {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item div.portfolio-overlay {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  div#primary main#main div.blog-content {
+    grid-template-columns: 100% !important;
+    grid-column-gap: 0 !important;
+  }
+  div#primary main#main div.blog-content div.post-content div.post-grid {
+    grid-template-columns: 100% !important;
+    grid-row-gap: 2em !important;
+  }
+  div#primary main#main div.blog-content div.post-content div.post-grid article div.entry-content {
+    display: block !important;
+  }
+  div#primary main#main div.blog-content div.post-content div.post-grid article div.entry-content img.post-thumbnail {
+    height: 200px !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 1em;
+  }
+  div#primary main#main div.blog-content div#comments div#respond form#commentform p.comment-form-comment textarea {
+    width: 100% !important;
+  }
+  div#primary main#main div.blog-content div#comments div#respond form#commentform div.comment-meta-fields {
+    display: block !important;
+  }
+  div#primary main#main div.blog-content div#comments div#respond form#commentform div.comment-meta-fields p {
+    width: 100% !important;
+  }
+  div#primary main#main div.blog-content aside.widget-area {
+    margin-top: 2em;
+  }
+
+  footer.site-footer {
+    width: 95% !important;
+  }
+  footer.site-footer div.site-info {
+    grid-template-columns: 100%;
+    grid-row-gap: 1em;
+  }
+  footer.site-footer div.site-info div.contact-detail {
+    margin: 0;
+  }
+
+  img#portfolio-modal-img {
+    width: 100% !important;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* iPad Pro */
+@media only screen and (min-width: 770px) and (max-width: 1024px) {
+  .site-header .site-header-content {
+    flex-direction: column;
+    margin-bottom: 1em;
+    width: 80%;
+  }
+  .site-header .site-header-content .site-branding {
+    text-align: center;
+  }
+
+  div.front-header > div.text-block p {
+    width: 80% !important;
+  }
+
+  div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content {
+    width: 80%;
+  }
+
+  div#primary main#main {
+    width: 80% !important;
+  }
+  div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item img.portfolio-img {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item div.portfolio-overlay {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  div#primary main#main p.comment-form-comment textarea {
+    width: 100% !important;
+  }
+
+  div#primary.show-sidebar main#main div.blog-content {
+    grid-template-columns: 68% 28% !important;
+    grid-column-gap: 4% !important;
+  }
+  div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid {
+    grid-template-columns: 100% !important;
+  }
+  div#primary.show-sidebar main#main p.comment-form-comment textarea {
+    width: 100% !important;
+  }
+
+  footer.site-footer {
+    width: 80% !important;
+  }
+}
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .site-header .site-header-content {
+    flex-direction: column;
+    margin-bottom: 1em;
+    width: 90%;
+  }
+  .site-header .site-header-content .site-branding {
+    text-align: center;
+  }
+
+  div.front-header > div.text-block p {
+    width: 90% !important;
+  }
+
+  div.portfolio-taxonomy div.portfolio-taxonomy-middle div.portfolio-taxonomy-content {
+    width: 90%;
+  }
+
+  div#primary main#main {
+    width: 90% !important;
+  }
+  div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item img.portfolio-img {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item div.portfolio-overlay {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  div#primary main#main p.comment-form-comment textarea {
+    width: 100% !important;
+  }
+
+  div#primary.show-sidebar main#main div.blog-content {
+    grid-template-columns: 68% 28% !important;
+    grid-column-gap: 4% !important;
+  }
+  div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid {
+    grid-template-columns: 100% !important;
+  }
+  div#primary.show-sidebar main#main p.comment-form-comment textarea {
+    width: 100% !important;
+  }
+
+  footer.site-footer {
+    width: 90% !important;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
 
 /*# sourceMappingURL=theme.css.map */

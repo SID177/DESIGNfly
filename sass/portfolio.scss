@@ -25,7 +25,7 @@ div#primary {
                 text-shadow: 2px 2px #ffffff;
             }
 
-            & > a {
+            & > a.view-all-button {
                 font-weight: normal;
                 font-size: 16px;
                 color: #ffffff;
@@ -45,7 +45,7 @@ div#primary {
                 grid-template-columns: auto auto auto;
                 grid-gap: 0.5em;
 
-                a {
+                a.portfolio-taxonomy-buttons {
                     font-weight: normal;
                     font-size: 16px;
                     color: #ffffff;
@@ -75,8 +75,8 @@ div#primary {
             div.portfolio-grid {
                 width: 100%;
                 display: grid;
-                grid-template-columns: 33% 33% 33%;
-                grid-column-gap: 1%;
+                grid-template-columns: 32% 32% 32%;
+                grid-column-gap: 2%;
                 grid-row-gap: 1em;
 
                 .portfolio-item {
@@ -84,7 +84,7 @@ div#primary {
     
                     img.portfolio-img {
                         height: 210px;
-                        width: 300px;
+                        width: 100%;
                         border-radius: 10px;
                         object-fit: none;
                         padding: 0;
@@ -98,7 +98,7 @@ div#primary {
                         left: 0;
                         right: 0;
                         height: 210px;
-                        width: 300px;
+                        width: 100%;
                         opacity: 0;
                         transition: .5s ease;
                         border-radius: 10px;

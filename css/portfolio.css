@@ -24,7 +24,7 @@ div#primary main#main div.main-title span {
   color: #62585f;
   text-shadow: 2px 2px #ffffff;
 }
-div#primary main#main div.main-title > a {
+div#primary main#main div.main-title > a.view-all-button {
   font-weight: normal;
   font-size: 16px;
   color: #ffffff;
@@ -43,7 +43,7 @@ div#primary main#main div.main-title div {
   grid-template-columns: auto auto auto;
   grid-gap: 0.5em;
 }
-div#primary main#main div.main-title div a {
+div#primary main#main div.main-title div a.portfolio-taxonomy-buttons {
   font-weight: normal;
   font-size: 16px;
   color: #ffffff;
@@ -69,8 +69,8 @@ div#primary main#main div.portfolio-block {
 div#primary main#main div.portfolio-block div.portfolio-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-column-gap: 1%;
+  grid-template-columns: 32% 32% 32%;
+  grid-column-gap: 2%;
   grid-row-gap: 1em;
 }
 div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item {
@@ -78,7 +78,7 @@ div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item {
 }
 div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item img.portfolio-img {
   height: 210px;
-  width: 300px;
+  width: 100%;
   border-radius: 10px;
   object-fit: none;
   padding: 0;
@@ -91,7 +91,7 @@ div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .po
   left: 0;
   right: 0;
   height: 210px;
-  width: 300px;
+  width: 100%;
   opacity: 0;
   transition: 0.5s ease;
   border-radius: 10px;
