@@ -5,6 +5,10 @@
 @use 'variables';
 @use 'mixins';
 
+body {
+    font-family: 'Open sans';
+}
+
 .site-header {
 	height: 105px;
 	width: 100%;

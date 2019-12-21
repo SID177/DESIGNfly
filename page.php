@@ -13,28 +13,45 @@
  */
 
 get_header();
+get_template_part( 'template-parts/content', 'portfolio-tax' );
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area show-sidebar">
 		<main id="main" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<?php
+			if ( have_posts() ) :
 
-			get_template_part( 'template-parts/content', 'page' );
+				?>
+				<div class="blog-content">
+					<div class="single-post-content">
+						<?php
+						while ( have_posts() ) :
+							the_post();
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
+							get_template_part( 'template-parts/content', '' );
+
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;
+
+						endwhile; // End of the loop.
+						?>
+					</div>
+					<?php get_sidebar(); ?>
+				</div>
+				<?php
+
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
 			endif;
-
-		endwhile; // End of the loop.
-		?>
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -8,6 +8,10 @@
 /*
 * This is a common css file for entire theme.
 */
+body {
+  font-family: "Open sans";
+}
+
 .site-header {
   height: 105px;
   width: 100%;
