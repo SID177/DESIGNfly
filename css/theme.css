@@ -748,7 +748,6 @@ div#portfolio-modal {
     width: 100% !important;
   }
 }
-/* Small devices (portrait tablets and large phones, 600px and up) */
 /* iPad Pro */
 @media only screen and (min-width: 770px) and (max-width: 1024px) {
   .site-header .site-header-content {
@@ -847,7 +846,5 @@ div#portfolio-modal {
     width: 90% !important;
   }
 }
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 
 /*# sourceMappingURL=theme.css.map */
