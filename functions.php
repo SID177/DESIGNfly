@@ -321,6 +321,11 @@ require get_template_directory() . '/inc/widgets/class-designfly-portfolio-widge
 require get_template_directory() . '/inc/widgets/class-designfly-posts-widget.php';
 
 /**
+ * Define Facebook widget.
+ */
+require get_template_directory() . '/inc/widgets/class-designfly-facebook-widget.php';
+
+/**
  * Register widget area and widgets.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -338,6 +343,7 @@ function designfly_widgets_init() {
 
 	register_widget( 'DESIGNfly_Portfolio_Widget' );
 	register_widget( 'DESIGNfly_Posts_Widget' );
+	register_widget( 'DESIGNfly_Facebook_Widget' );
 }
 add_action( 'widgets_init', 'designfly_widgets_init' );
 
