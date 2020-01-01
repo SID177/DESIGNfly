@@ -1,0 +1,61 @@
+#designfly-twitter-token-generation {
+    float: left;
+    width: 100%;
+    clear: both;
+    margin: 10px 0 10px 0;
+
+    #ctf-get-token {
+        display: block;
+        float: left;
+        clear: both;
+        padding: 0 21px 0 21px;
+        height: 47px;
+        line-height: 47px;
+        background: #1da1f2;
+        color: #e9eef3;
+        text-decoration: none;
+    
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    
+        -moz-transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    
+        .dashicons {
+            margin-right: 10px;
+            font-size: 22px;
+            line-height: unset;
+        }
+
+        .designfly-hidden-notice {
+            color: #fff;
+            display: none;
+            z-index: 100;
+        }
+    
+        &:hover {
+            background-color: #0c7abf;
+            color: #fff;
+        
+            -moz-transition: all 0.1s ease-in-out;
+            -webkit-transition: all 0.1s ease-in-out;
+            -o-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+
+            .designfly-hidden-notice {
+                display: inline;
+            }
+        }
+    }
+}
+
+.designfly-config-warning {
+    color: tomato;
+
+    a {
+        color: tomato;
+    }
+}

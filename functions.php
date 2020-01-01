@@ -310,6 +310,11 @@ function designfly_custom_comment_block( $comment, $args, $depth ) {
 	<?php
 }
 
+function designfly_admin_enqueue_scripts() {
+	wp_enqueue_style( 'designfly-admin', get_template_directory_uri() . '/css/admin.css' );
+}
+add_action( 'admin_enqueue_scripts', 'designfly_admin_enqueue_scripts' );
+
 /**
  * Define Portfolio widget.
  */
@@ -324,6 +329,11 @@ require get_template_directory() . '/inc/widgets/class-designfly-posts-widget.ph
  * Define Facebook widget.
  */
 require get_template_directory() . '/inc/widgets/class-designfly-facebook-widget.php';
+
+/**
+ * Define Twitter widget.
+ */
+require get_template_directory() . '/inc/widgets/class-designfly-twitter-widget.php';
 
 /**
  * Register widget area and widgets.
@@ -344,8 +354,15 @@ function designfly_widgets_init() {
 	register_widget( 'DESIGNfly_Portfolio_Widget' );
 	register_widget( 'DESIGNfly_Posts_Widget' );
 	register_widget( 'DESIGNfly_Facebook_Widget' );
+	register_widget( 'DESIGNfly_Twitter_Widget' );
 }
 add_action( 'widgets_init', 'designfly_widgets_init' );
+
+/**
+ * Add configuration page for twitter feeds widget.
+ */
+require get_template_directory() . '/inc/class-designfly-twitter-configuration.php';
+new DESIGNfly_Twitter_Configuration();
 
 /**
  * Implement the Custom Header feature.
