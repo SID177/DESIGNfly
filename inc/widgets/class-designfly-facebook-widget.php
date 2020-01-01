@@ -1,8 +1,12 @@
 <?php
 /**
- * Facebook Widget Class
- * 
+ * Custom widget to display facebook page and timeline.
+ *
  * @package DESIGNfly
+ */
+
+/**
+ * Adds DESIGNfly_Facebook_Widget.
  */
 class DESIGNfly_Facebook_Widget extends WP_Widget {
     // Default App ID.
@@ -10,7 +14,9 @@ class DESIGNfly_Facebook_Widget extends WP_Widget {
     // Default FB URL.
     private $default_fb_url = 'https://www.facebook.com/rtCamp.solutions/';
 
-    /** constructor */
+    /**
+	 * Register widget with WordPress.
+	 */
     public function __construct() {
 		parent::__construct(
 			'DESIGNfly_Facebook_Widget', // Base ID
@@ -19,7 +25,14 @@ class DESIGNfly_Facebook_Widget extends WP_Widget {
 		);
 	}
     
-    /** @see WP_Widget::widget */
+    /**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
     function widget( $args , $instance ) {
 
         $title                          =   apply_filters( 'widget_title' , $instance['title'] );
@@ -43,7 +56,16 @@ class DESIGNfly_Facebook_Widget extends WP_Widget {
 
     }
 
-    /** @see WP_Widget::update */
+    /**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = array();
 
@@ -54,7 +76,13 @@ class DESIGNfly_Facebook_Widget extends WP_Widget {
         return $instance;
     }
 
-    /** @see WP_Widget::form */
+    /**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
     function form( $instance ) {
         $title          =   ( ! empty( $instance['title'] ) ? $instance['title'] : '' );
         $app_id         =   ( ! empty( $instance['app_id'] ) ? $instance['app_id'] : $this->default_app_id );
