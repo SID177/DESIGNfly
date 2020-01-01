@@ -9,17 +9,21 @@
  * Adds DESIGNfly_Portfolio_Widget.
  */
 class DESIGNfly_Portfolio_Widget extends WP_Widget {
-    // Default number of items to show.
-    private $default_nois = 8;
+	/**
+	 * Default number of items to show.
+	 *
+	 * @var int
+	 */
+	private $default_nois = 8;
 
-    /**
+	/**
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
 		parent::__construct(
-			'DESIGNfly_Portfolio_Widget', // Base ID
-			esc_html__( 'DESIGNfly Portfolios', 'designfly' ), // Name
-			array( 'description' => esc_html__( 'A Widget to show Portfolios', 'designfly' ), ) // Args
+			'DESIGNfly_Portfolio_Widget', // Base ID.
+			esc_html__( 'DESIGNfly Portfolios', 'designfly' ), // Name.
+			array( 'description' => esc_html__( 'A Widget to show Portfolios', 'designfly' ) ) // Args.
 		);
 	}
 
@@ -32,28 +36,30 @@ class DESIGNfly_Portfolio_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-        $posts = get_posts( array(
-            'post_type'   => 'designfly_portfolio',
-            'numberposts' => ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois ),
-            'post_status' => 'publish'
-        ) );
+		$posts = get_posts(
+			array(
+				'post_type'   => 'designfly_portfolio',
+				'numberposts' => ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois ),
+				'post_status' => 'publish',
+			)
+		);
 
-        if ( ! empty( $posts ) ) :
+		if ( ! empty( $posts ) ) :
 
-            echo $args['before_widget'];
-            if ( ! empty( $instance['title'] ) ) {
-                echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-            }
-            echo '<div class="portfolio-widget-block">';
+			echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			if ( ! empty( $instance['title'] ) ) {
+				echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+			echo '<div class="portfolio-widget-block">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-            foreach ( $posts as $post ) {
-				echo '<img src="' . get_the_post_thumbnail_url( $post ) . '">';
+			foreach ( $posts as $post ) {
+				echo '<img src="' . get_the_post_thumbnail_url( $post ) . '">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
-            echo '</div>';
-            echo $args['after_widget'];
+			echo '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-        endif;
+		endif;
 	}
 
 	/**
@@ -64,18 +70,18 @@ class DESIGNfly_Portfolio_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
-		$nois  = ! empty( $instance['nois'] ) ? $instance['nois'] : esc_html__( $this->default_nois, 'designfly' );
+		$title = ( ! empty( $instance['title'] ) ? $instance['title'] : '' );
+		$nois  = ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois );
 		?>
 		<p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'designfly' ); ?></label> 
-            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-        </p>
-        <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'nois' ) ); ?>"><?php esc_attr_e( 'Number of items:', 'designfly' ); ?></label> 
-            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'nois' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'nois' ) ); ?>" type="number" value="<?php echo esc_attr( $nois ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'designfly' ); ?></label> 
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
-		<?php 
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'nois' ) ); ?>"><?php esc_attr_e( 'Number of items:', 'designfly' ); ?></label> 
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'nois' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'nois' ) ); ?>" type="number" value="<?php echo esc_attr( $nois ); ?>">
+		</p>
+		<?php
 	}
 
 	/**
@@ -89,7 +95,7 @@ class DESIGNfly_Portfolio_Widget extends WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = array();
+		$instance          = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
 		$instance['nois']  = ( ! empty( $new_instance['nois'] ) ) ? sanitize_text_field( $new_instance['nois'] ) : $this->default_nois;
 

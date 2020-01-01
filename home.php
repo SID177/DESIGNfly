@@ -2,7 +2,6 @@
 /**
  * The Blog Posts index page.
  *
- *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package DESIGNfly
@@ -22,7 +21,7 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 				<div class="blog-content">
 					<div class="post-content">
 						<div class="main-title">
-							<span class="title"><?= esc_html__( "LET'S BLOG", 'designfly' ) ?></span>
+							<span class="title"><?php echo esc_html__( "LET'S BLOG", 'designfly' ); ?></span>
 						</div>
 						<div class="post-grid">
 							<?php
@@ -46,11 +45,13 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 				</div>
 				<?php
 
-				the_posts_pagination( array(
-					'screen_reader_text' => ' ',
-					'next_text'          => '<img src="' . get_template_directory_uri() . '/img/pagination-arrow.png' . '">',
-					'prev_text'          => '',
-				) );
+				the_posts_pagination(
+					array(
+						'screen_reader_text' => ' ',
+						'next_text'          => '<img src="' . get_template_directory_uri() . '/img/pagination-arrow.png">',
+						'prev_text'          => '',
+					)
+				);
 
 			else :
 

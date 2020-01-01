@@ -15,13 +15,20 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 		<main id="main" class="site-main">
 
 			<div class="main-title">
-				<span><?= esc_html__( "D'SIGN IS THE SOUL", 'designfly' ) ?></span>
+				<span><?php echo esc_html__( "D'SIGN IS THE SOUL", 'designfly' ); ?></span>
 				<div class="main-title-button">
 					<?php
-					$terms = get_terms( array( 'taxonomy' => 'designfly_categories', 'hide_empty' => false, 'number' => 3 ) );
-					foreach ( $terms as $term ) {
+					$terms = get_terms(
+						array(
+							'taxonomy'   => 'designfly_categories',
+							'hide_empty' => false,
+							'number'     => 3,
+						)
+					);
+
+					foreach ( $terms as $t ) {
 						?>
-						<a class="portfolio-taxonomy-buttons" href="<?= get_term_link( $term, 'designfly_portfolio' ) ?>"><?= esc_html( $term->name ) ?></a>
+						<a class="portfolio-taxonomy-buttons" href="<?php echo esc_url( get_term_link( $t, 'designfly_portfolio' ) ); ?>"><?php echo esc_html( $t->name ); ?></a>
 						<?php
 					}
 					?>
@@ -31,16 +38,16 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 			<div class="portfolio-block">
 				<?php
 				if ( have_posts() ) :
-					
+
 					?>
 					<div class="portfolio-grid">
 					<?php
 
-						while ( have_posts() ) :
+					while ( have_posts() ) :
 
-							the_post();
-							
-							get_template_part( 'template-parts/content', 'portfolio' );
+						the_post();
+
+						get_template_part( 'template-parts/content', 'portfolio' );
 
 						endwhile;
 
@@ -48,11 +55,13 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 					</div>
 					<?php
 
-					the_posts_pagination( array(
-						'screen_reader_text' => ' ',
-						'next_text'          => '<img src="' . get_template_directory_uri() . '/img/pagination-arrow.png' . '">',
-						'prev_text'          => '',
-					) );
+					the_posts_pagination(
+						array(
+							'screen_reader_text' => ' ',
+							'next_text'          => '<img src="' . get_template_directory_uri() . '/img/pagination-arrow.png">',
+							'prev_text'          => '',
+						)
+					);
 
 				else :
 

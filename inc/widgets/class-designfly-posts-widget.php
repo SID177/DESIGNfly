@@ -9,19 +9,27 @@
  * Adds DESIGNfly_Portfolio_Widget.
  */
 class DESIGNfly_Posts_Widget extends WP_Widget {
-    // Default number of items to show.
+	/**
+	 * Default number of items to show.
+	 *
+	 * @var int
+	 */
 	private $default_nois = 5;
-	// Default post type to show.
+	/**
+	 * Default post type to show.
+	 *
+	 * @var string
+	 */
 	private $default_type = 'popular';
 
-    /**
+	/**
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
 		parent::__construct(
-			'DESIGNfly_Posts_Widget', // Base ID
-			esc_html__( 'DESIGNfly Posts', 'designfly' ), // Name
-			array( 'description' => esc_html__( 'A Widget to show popular/recent/related posts', 'designfly' ), ) // Args
+			'DESIGNfly_Posts_Widget', // Base ID.
+			esc_html__( 'DESIGNfly Posts', 'designfly' ), // Name.
+			array( 'description' => esc_html__( 'A Widget to show popular/recent/related posts', 'designfly' ) ) // Args.
 		);
 	}
 
@@ -35,13 +43,13 @@ class DESIGNfly_Posts_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$qry_args = array(
-			'post_type'      => 'post',
-            'numberposts'    => ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois ),
-            'post_status'    => 'publish'
+			'post_type'   => 'post',
+			'numberposts' => ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois ),
+			'post_status' => 'publish',
 		);
 
 		if ( 'popular' === $instance['type'] ) {
-			$qry_args['meta_key'] = 'designfly_post_views_count';
+			$qry_args['meta_key'] = 'designfly_post_views_count'; // phpcs:ignore
 			$qry_args['orderby']  = array( 'meta_value_num' => 'DESC' );
 		}
 
@@ -58,54 +66,56 @@ class DESIGNfly_Posts_Widget extends WP_Widget {
 
 			$qry_args['post__not_in'] = array( get_the_ID() );
 
-			$terms = get_terms( array(
-				'object_ids' => get_the_ID(),
-				'hide_empty' => false,
-				'fields'     => 'ids'
-			) );
-			
+			$terms = get_terms(
+				array(
+					'object_ids' => get_the_ID(),
+					'hide_empty' => false,
+					'fields'     => 'ids',
+				)
+			);
+
 			$qry_args['tag__in'] = $terms;
 		}
 
 		$posts = get_posts( $qry_args );
 
-        if ( ! empty( $posts ) ) :
+		if ( ! empty( $posts ) ) :
 
-            echo $args['before_widget'];
-            if ( ! empty( $instance['title'] ) ) {
-                echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-            }
-            echo '<div class="designfly-posts-widget-block">';
+			echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			if ( ! empty( $instance['title'] ) ) {
+				echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+			echo '<div class="designfly-posts-widget-block">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-            foreach ( $posts as $post ) {
+			foreach ( $posts as $post ) {
 
 				?>
 				<div class="widget-post-block">
 					<?php if ( has_post_thumbnail( $post ) ) : ?>
-						<img src="<?= esc_url( get_the_post_thumbnail_url( $post ) ) ?>">
+						<img src="<?php echo esc_url( get_the_post_thumbnail_url( $post ) ); ?>">
 					<?php endif; ?>
 					<div class="widget-post-details">
 						<span class="post-title">
-							<a class="post-title-link" href="<?= esc_url( get_post_permalink( $post ) ) ?>">
-								<?= get_the_title( $post ); ?>
+							<a class="post-title-link" href="<?php echo esc_url( get_post_permalink( $post ) ); ?>">
+								<?php echo esc_html( get_the_title( $post ) ); ?>
 							</a>
 						</span>
 						<span class="post-meta">
 							<?php
 							designfly_posted_by( $post );
-							echo '&nbsp;';
+							echo '&nbsp;'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							designfly_posted_on( $post );
 							?>
 						</span>
 					</div>
 				</div>
 				<?php
-            }
+			}
 
-            echo '</div>';
-            echo $args['after_widget'];
+			echo '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-        endif;
+		endif;
 	}
 
 	/**
@@ -116,9 +126,9 @@ class DESIGNfly_Posts_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
-		$nois  = ! empty( $instance['nois'] ) ? $instance['nois'] : esc_html__( $this->default_nois, 'designfly' );
-		$type  = ! empty( $instance['type'] ) ? $instance['type'] : esc_html__( $this->default_type, 'designfly' );
+		$title = ( ! empty( $instance['title'] ) ? $instance['title'] : '' );
+		$nois  = ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois );
+		$type  = ( ! empty( $instance['type'] ) ? $instance['type'] : $this->default_type );
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'designfly' ); ?></label> 
@@ -127,16 +137,16 @@ class DESIGNfly_Posts_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'type' ) ); ?>"><?php esc_attr_e( 'Type of Posts:', 'designfly' ); ?></label> 
 			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'type' ) ); ?>">
-				<option <?php selected( $type, 'popular' ); ?> value="<?= esc_html( 'popular' ) ?>"><?= esc_html__( 'Popular Posts', 'designfly' ) ?></option>
-				<option <?php selected( $type, 'recent' ); ?> value="<?= esc_html( 'recent' ) ?>"><?= esc_html__( 'Recent Posts', 'designfly' ) ?></option>
-				<option <?php selected( $type, 'related' ); ?> value="<?= esc_html( 'related' ) ?>"><?= esc_html__( 'Related (to current post) Posts', 'designfly' ) ?></option>
+				<option <?php selected( $type, 'popular' ); ?> value="<?php echo esc_attr( 'popular' ); ?>"><?php echo esc_html__( 'Popular Posts', 'designfly' ); ?></option>
+				<option <?php selected( $type, 'recent' ); ?> value="<?php echo esc_attr( 'recent' ); ?>"><?php echo esc_html__( 'Recent Posts', 'designfly' ); ?></option>
+				<option <?php selected( $type, 'related' ); ?> value="<?php echo esc_attr( 'related' ); ?>"><?php echo esc_html__( 'Related (to current post) Posts', 'designfly' ); ?></option>
 			</select>
 		</p>
-        <p>
+		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'nois' ) ); ?>"><?php esc_attr_e( 'Number of items:', 'designfly' ); ?></label> 
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'nois' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'nois' ) ); ?>" type="number" value="<?php echo esc_attr( $nois ); ?>">
 		</p>
-		<?php 
+		<?php
 	}
 
 	/**
@@ -150,7 +160,7 @@ class DESIGNfly_Posts_Widget extends WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = array();
+		$instance          = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
 		$instance['nois']  = ( ! empty( $new_instance['nois'] ) ) ? sanitize_text_field( $new_instance['nois'] ) : $this->default_nois;
 		$instance['type']  = ( ! empty( $new_instance['type'] ) ) ? sanitize_text_field( $new_instance['type'] ) : $this->default_type;

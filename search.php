@@ -22,7 +22,10 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 					<div class="post-content">
 						<div class="main-title">
 							<span class="title">
-								<?php printf( esc_html__( 'Search Results for: %s', 'designfly' ), get_search_query() ); ?>
+								<?php
+								/* translators: Searched word */
+								printf( esc_html__( 'Search Results for: %s', 'designfly' ), get_search_query() );
+								?>
 							</span>
 						</div>
 						<div class="post-grid">
@@ -47,11 +50,13 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 				</div>
 				<?php
 
-				the_posts_pagination( array(
-					'screen_reader_text' => ' ',
-					'next_text'          => '<img src="' . get_template_directory_uri() . '/img/pagination-arrow.png' . '">',
-					'prev_text'          => '',
-				) );
+				the_posts_pagination(
+					array(
+						'screen_reader_text' => ' ',
+						'next_text'          => '<img src="' . get_template_directory_uri() . '/img/pagination-arrow.png">',
+						'prev_text'          => '',
+					)
+				);
 
 			else :
 

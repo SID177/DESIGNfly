@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="shortcut icon" href="<?= get_stylesheet_directory_uri() ?>/img/favicon.ico" />
+	<link rel="shortcut icon" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/favicon.ico" />
 
 	<?php wp_head(); ?>
 </head>
@@ -27,17 +27,19 @@
 		<div class="site-header-middle">
 			<div class="site-header-content">
 				<div class="site-branding">
-					<a class="site-logo-link" href="<?= home_url() ?>">
-						<img class="site-logo" src="<?= get_template_directory_uri() ?>/img/logo.png">
+					<a class="site-logo-link" href="<?php echo esc_url( home_url() ); ?>">
+						<img class="site-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.png">
 					</a>
 				</div><!-- .site-branding -->
 
 				<div class="site-navigation-search">
 					<nav id="site-navigation" class="main-navigation">
 						<?php
-						wp_nav_menu( array( 
-							'theme_location' => 'primary-menu'
-						) );
+						wp_nav_menu(
+							array(
+								'theme_location' => 'primary-menu',
+							)
+						);
 						?>
 					</nav><!-- #site-navigation -->
 					<?php get_search_form(); ?>

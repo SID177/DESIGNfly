@@ -45,11 +45,13 @@ get_template_part( 'template-parts/content', 'portfolio-tax' );
 				</div>
 				<?php
 
-				the_posts_pagination( array(
-					'screen_reader_text' => ' ',
-					'next_text'          => '<img src="' . get_template_directory_uri() . '/img/pagination-arrow.png' . '">',
-					'prev_text'          => '',
-				) );
+				the_posts_pagination(
+					array(
+						'screen_reader_text' => ' ',
+						'next_text'          => '<img src="' . get_template_directory_uri() . '/img/pagination-arrow.png">',
+						'prev_text'          => '',
+					)
+				);
 
 			else :
 
