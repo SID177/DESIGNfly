@@ -462,6 +462,57 @@ div#primary.show-sidebar {
                         }
                     }
                 }
+
+                .widget_designfly_twitter_widget {
+                    font-family: 'Open sans';
+                    color: #62585f;
+                    font-weight: normal;
+                    
+                    div.designfly-tweet-block {
+
+                        div.designfly-tweet-block-header {
+                            width: 100%;
+                            display: flex;
+                            margin-bottom: 0.5em;
+
+                            & > img {
+                                margin-right: 0.5em;
+                            }
+
+                            div.designfly-tweet-header-block {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+
+                                div.designfly-tweet-name-handle {
+                                    display: grid;
+                                    grid-template-columns: auto;
+
+                                    span.designfly-tweet-name {
+                                        font-size: 14px;
+                                    }
+
+                                    span.designfly-tweet-handle {
+                                        font-size: 13px;
+                                        
+                                        a {
+                                            color: #ef4634;
+                                        }
+                                    }
+                                }
+
+                                span.designfly-tweet-time {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+
+                        p.designfly-tweet-text {
+                            font-size: 13px;
+                            line-height: 19.5px;
+                        }
+                    }
+                }
     
                 .widget_archive {
                     height: 10em;

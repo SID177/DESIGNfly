@@ -408,6 +408,44 @@ div#primary.show-sidebar main#main div.blog-content aside.widget-area div.design
 div#primary.show-sidebar main#main div.blog-content aside.widget-area div.designfly-posts-widget-block div.widget-post-block div.widget-post-details span.post-meta span.author a {
   color: #ef4634;
 }
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget {
+  font-family: "Open sans";
+  color: #62585f;
+  font-weight: normal;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block div.designfly-tweet-block-header {
+  width: 100%;
+  display: flex;
+  margin-bottom: 0.5em;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block div.designfly-tweet-block-header > img {
+  margin-right: 0.5em;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block div.designfly-tweet-block-header div.designfly-tweet-header-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block div.designfly-tweet-block-header div.designfly-tweet-header-block div.designfly-tweet-name-handle {
+  display: grid;
+  grid-template-columns: auto;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block div.designfly-tweet-block-header div.designfly-tweet-header-block div.designfly-tweet-name-handle span.designfly-tweet-name {
+  font-size: 14px;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block div.designfly-tweet-block-header div.designfly-tweet-header-block div.designfly-tweet-name-handle span.designfly-tweet-handle {
+  font-size: 13px;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block div.designfly-tweet-block-header div.designfly-tweet-header-block div.designfly-tweet-name-handle span.designfly-tweet-handle a {
+  color: #ef4634;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block div.designfly-tweet-block-header div.designfly-tweet-header-block span.designfly-tweet-time {
+  font-size: 14px;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_designfly_twitter_widget div.designfly-tweet-block p.designfly-tweet-text {
+  font-size: 13px;
+  line-height: 19.5px;
+}
 div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget_archive {
   height: 10em;
   overflow: auto;
