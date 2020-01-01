@@ -43,6 +43,8 @@ class DESIGNfly_Twitter_Configuration {
             return;
         }
 
+        echo '<div class="wrap">';
+
         if ( isset( $_GET['settings-updated'] ) ) {
             // add settings saved message with the class of "updated"
             add_settings_error( 'designfly_messages', 'designfly_messages', __( 'Settings Saved', 'designfly' ), 'updated' );
@@ -64,6 +66,7 @@ class DESIGNfly_Twitter_Configuration {
             ?>
         </form>
         <?php
+        echo '</div>';
     }
 
     /**
