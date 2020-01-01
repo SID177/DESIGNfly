@@ -40,11 +40,14 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
         }
 
         $title = apply_filters( 'widget_title' , $instance['title'] );
+
+        $screen_name = get_option( 'screen_name', 'rtCamp' );
+        $follow      = '<div><form method="get" action="https://twitter.com/' . esc_attr( $screen_name ) . '"><button type="submit" class="twitter-follow-button"><span class="dashicons dashicons-twitter"></span>' . esc_html__( 'Follow us', 'designfly' ) . '</button></form></div>';
         
         echo $args['before_widget'];
         
         if ( ! empty( $title ) ) {
-            echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+            echo $args['before_title'] . esc_html( $title ) . $follow . $args['after_title'];
         }
 
         foreach ( $tweets as $tweet ) {
@@ -131,14 +134,14 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
     
         $diff = time() - $ts;
 
-        if ( 0 === $diff ) {
+        if ( 0 == $diff ) {
             
             return 'now';
 
         } elseif ( $diff > 0 ) {
             
             $day_diff = floor( $diff / 86400 );
-            if ( 0 === $day_diff ) {
+            if ( 0 == $day_diff ) {
                 
                 if ( $diff < 60 ) { 
                     return 'now'; 
@@ -158,7 +161,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 
             }
 
-            if ( 1 === $day_diff ) { 
+            if ( 1 == $day_diff ) { 
                 return 'Yesterday'; 
             }
             if ( $day_diff < 7 ) { 
@@ -178,7 +181,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
             $diff     = abs( $diff );
             $day_diff = floor( $diff / 86400 );
             
-            if ( 0 === $day_diff ) {
+            if ( 0 == $day_diff ) {
                 
                 if ( $diff < 120 ) { 
                     return '1 min'; 
@@ -195,7 +198,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 
             }
 
-            if ( 1 === $day_diff ) { 
+            if ( 1 == $day_diff ) { 
                 return 'Tomorrow'; 
             }
             if ( $day_diff < 4 ) { 
@@ -236,23 +239,28 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
         $consumer_key              = $this->consumer_key;
         $consumer_secret           = $this->consumer_secret;
         
-        
         $twitter_timeline = "user_timeline";
+
+        $request = array(
+            'count'       => ( ! empty( $args['nots'] ) ? $args['nots'] : '1' ),
+            'screen_name' => 'rtCamp',
+        );
         
-        $params = array(
+        $oauth = array(
             'oauth_consumer_key' => $consumer_key,
             'oauth_nonce' => time(),
             'oauth_signature_method' => 'HMAC-SHA1',
             'oauth_token' => $oauth_access_token,
             'oauth_timestamp' => time(),
             'oauth_version' => '1.0',
-            'count'       => ( ! empty( $args['nots'] ) ? $args['nots'] : '1' ),
-            'screen_name' => 'rtCamp',
         );
+
+        $oauth = array_merge( $oauth, $request );
          
         // make base string
         $baseURI = "https://api.twitter.com/1.1/statuses/$twitter_timeline.json";
         $method = "GET";
+        $params = $oauth;
          
         $r = array();
         ksort( $params );

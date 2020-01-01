@@ -467,6 +467,29 @@ div#primary.show-sidebar {
                     font-family: 'Open sans';
                     color: #62585f;
                     font-weight: normal;
+
+                    .widget-title {
+                        display: flex;
+                        justify-content: space-between;
+
+                        button.twitter-follow-button {
+                            span.dashicons {
+                                color: #1da1f2;
+                                line-height: unset;
+                                vertical-align: sub;
+                                font-size: 15px;
+                            }
+
+                            text-shadow: none;
+                            color: initial;
+                            padding: 0.2em 0.5em;
+                            font-size: 13px;
+                            position: relative;
+                            top: -3px;
+                            line-height: 1.3;
+                            font-weight: bold;
+                        }
+                    }
                     
                     div.designfly-tweet-block {
 
