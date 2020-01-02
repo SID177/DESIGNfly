@@ -148,7 +148,7 @@ class DESIGNfly_Twitter_Configuration {
 			<?php endif; ?>
 			<a target="_blank" href="<?php echo esc_url( $this->twitter_oauth_url . admin_url( 'admin.php?page=designfly-twitter-configuration' ) ); ?>" id="ctf-get-token">
 				<span class="dashicons dashicons-twitter"></span>
-				<?php esc_html_e( 'Log in to Twitter and get my Access Token and Secret', 'designfly' ); ?>
+				<?php esc_html_e( 'Log in to Twitter and get Access Token and Secret', 'designfly' ); ?>
 				<h3 class="designfly-hidden-notice"><?php echo esc_html__( '  (This will overwrite existing configurations.)', 'designfly' ); ?></h3>
 			</a>
 
