@@ -377,6 +377,21 @@ div#primary.show-sidebar {
         display: flex;
         flex-flow: column;
 
+        section.widget_designfly_facebook_widget {
+          background-color: #fff;
+          border: vars.$border;
+          border-top: none;
+
+          .widget-title {
+            background-color: #4267b2;
+            text-shadow: none;
+            color: #fff;
+            padding: 0.7em 0.5em;
+            font-size: 13px;
+            font-weight: normal;
+          }
+        }
+
         .widget {
           overflow: auto;
           margin-bottom: 2.9em;

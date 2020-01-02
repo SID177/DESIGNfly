@@ -337,6 +337,19 @@ div#primary.show-sidebar main#main div.blog-content aside.widget-area {
   display: flex;
   flex-flow: column;
 }
+div#primary.show-sidebar main#main div.blog-content aside.widget-area section.widget_designfly_facebook_widget {
+  background-color: #fff;
+  border: 1px solid #62585f;
+  border-top: none;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area section.widget_designfly_facebook_widget .widget-title {
+  background-color: #4267b2;
+  text-shadow: none;
+  color: #fff;
+  padding: 0.7em 0.5em;
+  font-size: 13px;
+  font-weight: normal;
+}
 div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget {
   overflow: auto;
   margin-bottom: 2.9em;
