@@ -245,7 +245,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 
 		$request = array(
 			'count'       => ( ! empty( $args['nots'] ) ? $args['nots'] : '1' ),
-			'screen_name' => 'rtCamp',
+			'screen_name' => $screen_name,
 		);
 
 		$oauth = array(
