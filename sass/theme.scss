@@ -42,7 +42,7 @@ div#primary.show-sidebar {
     margin: 0 auto;
     padding-bottom: 1.8em;
     width: vars.$content-width;
-    border-bottom: variables.$border;
+    border-bottom: vars.$border;
 
     div.blog-content {
       display: grid;
@@ -53,7 +53,7 @@ div#primary.show-sidebar {
         div.main-title {
           display: flex;
           justify-content: space-between;
-          border-bottom: variables.$border;
+          border-bottom: vars.$border;
           font-family: vars.$font-family;
           margin-bottom: 1.5em;
 
@@ -156,7 +156,7 @@ div#primary.show-sidebar {
                   @include mixins.created-by-posted-on();
                 }
 
-                div.post-content {
+                div.post-text {
                   overflow: auto;
                   line-height: 21px;
 
@@ -224,8 +224,8 @@ div#primary.show-sidebar {
             width: 100%;
             padding: 0.3em 0;
             font-size: 18px;
-            border-top: variables.$border;
-            border-bottom: variables.$border;
+            border-top: vars.$border;
+            border-bottom: vars.$border;
           }
 
           ul.comment-list {
@@ -310,7 +310,7 @@ div#primary.show-sidebar {
 
           div#respond {
             padding-top: 1em;
-            border-top: variables.$border;
+            border-top: vars.$border;
 
             #reply-title > small {
               float: right;
@@ -333,7 +333,7 @@ div#primary.show-sidebar {
                 textarea {
                   width: 620px;
                   height: 90px;
-                  border: variables.$border;
+                  border: vars.$border;
                 }
               }
 
@@ -352,7 +352,7 @@ div#primary.show-sidebar {
                 input {
                   width: 100%;
                   height: 30px;
-                  border: variables.$border;
+                  border: vars.$border;
                 }
               }
 
@@ -387,7 +387,7 @@ div#primary.show-sidebar {
             font-size: 25px;
             color: #62585f;
             text-shadow: 2px 2px #fff;
-            border-bottom: variables.$border;
+            border-bottom: vars.$border;
             padding-bottom: 0.25em;
             overflow: auto;
           }
@@ -642,7 +642,7 @@ div#primary.show-sidebar {
     width: 150px;
     height: 20px;
     background-color: #fff;
-    border: variables.$border;
+    border: vars.$border;
     border-radius: 3px;
   }
 
@@ -749,7 +749,7 @@ footer.site-footer {
     grid-template-columns: 50% 50%;
     font-family: vars.$font-family;
     font-weight: normal;
-    border-bottom: variables.$border;
+    border-bottom: vars.$border;
 
     span.title {
       font-size: 25px;
