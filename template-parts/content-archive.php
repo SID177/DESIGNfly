@@ -30,7 +30,7 @@
 				<span><?php designfly_posted_by() ?>&nbsp;<?php designfly_posted_on() ?></span>
 				<span class="number-of-comments"><?= get_comments_number() . ' ' . esc_html__( 'comments', 'designfly' ) ?></span>
 			</div>
-			<div class="post-content">
+			<div class="post-text">
 				<?php the_excerpt(); ?>
 			</div>
 		</div>

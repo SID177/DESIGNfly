@@ -22,13 +22,13 @@ div#primary main#main div.main-title span {
   font-weight: lighter;
   font-size: 45px;
   color: #62585f;
-  text-shadow: 2px 2px #ffffff;
+  text-shadow: 2px 2px #fff;
 }
 div#primary main#main div.main-title > a.view-all-button {
   font-weight: normal;
   font-size: 16px;
-  color: #ffffff;
-  background-color: #222222;
+  color: #fff;
+  background-color: #222;
   padding: 10px;
   border-radius: 5px;
   line-height: 0.5;
@@ -46,8 +46,8 @@ div#primary main#main div.main-title div {
 div#primary main#main div.main-title div a.portfolio-taxonomy-buttons {
   font-weight: normal;
   font-size: 16px;
-  color: #ffffff;
-  background-color: #222222;
+  color: #fff;
+  background-color: #222;
   padding: 10px;
   border-radius: 5px;
   line-height: 0.5;
@@ -57,7 +57,8 @@ div#primary main#main div.main-title div a.portfolio-taxonomy-buttons {
   display: block;
   text-decoration: none;
 }
-div#primary main#main div.main-title a:hover, div#primary main#main div.main-title a.selected {
+div#primary main#main div.main-title a:hover,
+div#primary main#main div.main-title a.selected {
   background-color: #ef4634;
 }
 div#primary main#main div.portfolio-block {
@@ -95,11 +96,11 @@ div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .po
   opacity: 0;
   transition: 0.5s ease;
   border-radius: 10px;
-  background-color: #222222;
+  background-color: #222;
   cursor: pointer;
 }
 div#primary main#main div.portfolio-block div.portfolio-grid .portfolio-item .portfolio-overlay .portfolio-overlay-text {
-  color: #ffffff;
+  color: #fff;
   font-family: "Open sans";
   font-size: 15px;
   position: absolute;
@@ -136,14 +137,14 @@ div#primary main#main div.portfolio-block nav.pagination div.nav-links a {
   font-family: "Open sans";
   font-weight: 600;
   font-size: 16px;
-  color: #222222;
+  color: #222;
   text-decoration: none;
 }
 div#primary main#main div.portfolio-block nav.pagination div.nav-links span.current {
   font-family: "Open sans";
   font-weight: 600;
   font-size: 16px;
-  color: #ffffff;
+  color: #fff;
   background-color: #ef4634;
   border-radius: 3px;
 }
@@ -153,7 +154,7 @@ div#primary main#main div.portfolio-block nav.pagination div.nav-links a.next im
   width: auto;
 }
 div#primary main#main div.portfolio-block nav.pagination div.nav-links a:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #ef4634;
   border-radius: 3px;
 }
@@ -204,7 +205,7 @@ div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#p
 }
 div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#portfolio-modal-box-flex div#portfolio-modal-box-border {
   padding: 20px 20px 0 20px;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#portfolio-modal-box-flex div#portfolio-modal-box-border img#portfolio-modal-img {
   width: auto;
@@ -213,7 +214,7 @@ div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#p
 div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#portfolio-modal-box-flex div#portfolio-modal-box-border div#portfolio-modal-caption {
   height: 60px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 15px 0;
   font-family: "Open sans";
   font-size: 18px;
@@ -240,8 +241,8 @@ div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div.p
   width: 35px;
   display: block;
   text-align: center;
-  background-color: #ffffff;
-  color: #222222;
+  background-color: #fff;
+  color: #222;
   font-size: 1.4em;
   cursor: pointer;
 }

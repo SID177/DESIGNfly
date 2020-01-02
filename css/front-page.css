@@ -22,7 +22,7 @@ div.front-header > div.text-block div {
   font-family: "Open sans";
   font-weight: bold;
   font-size: 70px;
-  color: #ffffff;
+  color: #fff;
   text-shadow: 2px 2px #950904;
 }
 div.front-header > div.text-block p {
@@ -30,7 +30,7 @@ div.front-header > div.text-block p {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: #fff;
   padding-top: 10px;
   width: 45%;
   margin: auto;

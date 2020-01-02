@@ -5,23 +5,23 @@
 @use 'variables';
 
 @mixin created-by-posted-on {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.35em;
-    font-size: 12px;
-    border-bottom: variables.$border;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.35em;
+  font-size: 12px;
+  border-bottom: variables.$border;
 
-    span.author {
-        overflow: auto;
+  span.author {
+    overflow: auto;
 
-        a {
-            color: #ef4634;
-        }
+    a {
+      color: #ef4634;
     }
+  }
 
-    span.number-of-comments {
-        overflow: auto;
-        color: #ef4634;
-    }
+  span.number-of-comments {
+    overflow: auto;
+    color: #ef4634;
+  }
 }
