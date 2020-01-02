@@ -374,13 +374,12 @@ div#primary.show-sidebar {
             }
 
             aside.widget-area {
-                display: grid;
-                grid-template-columns: auto;
-                grid-row-gap: 2em;
-                height: fit-content;
+                display: flex;
+                flex-flow: column;
 
                 .widget {
                     overflow: auto;
+                    margin-bottom: 2.9em;
     
                     .widget-title {
                         font-family: 'Open sans';
@@ -392,6 +391,10 @@ div#primary.show-sidebar {
                         padding-bottom: 0.25em;
                         overflow: auto;
                     }
+                }
+
+                .widget:last-child {
+                    margin-bottom: 0;
                 }
 
                 div.portfolio-widget-block {

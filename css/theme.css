@@ -333,13 +333,12 @@ div#primary.show-sidebar main#main div.blog-content div.single-post-content div#
   line-height: 1;
 }
 div#primary.show-sidebar main#main div.blog-content aside.widget-area {
-  display: grid;
-  grid-template-columns: auto;
-  grid-row-gap: 2em;
-  height: fit-content;
+  display: flex;
+  flex-flow: column;
 }
 div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget {
   overflow: auto;
+  margin-bottom: 2.9em;
 }
 div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget .widget-title {
   font-family: "Open sans";
@@ -350,6 +349,9 @@ div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget .w
   border-bottom: 1px solid #62585f;
   padding-bottom: 0.25em;
   overflow: auto;
+}
+div#primary.show-sidebar main#main div.blog-content aside.widget-area .widget:last-child {
+  margin-bottom: 0;
 }
 div#primary.show-sidebar main#main div.blog-content aside.widget-area div.portfolio-widget-block {
   display: grid;
