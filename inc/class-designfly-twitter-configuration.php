@@ -20,6 +20,10 @@ class DESIGNfly_Twitter_Configuration {
 	 * Constructor, registering hooks.
 	 */
 	public function __construct() {
+		global $designfly_consumer_key, $designfly_consumer_secret;
+		$designfly_consumer_key    = 'FPYSYWIdyUIQ76Yz5hdYo5r7y';
+		$designfly_consumer_secret = 'GqPj9BPgJXjRKIGXCULJljocGPC62wN2eeMSnmZpVelWreFk9z';
+
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
 		add_action( 'admin_init', array( $this, 'options_page_init' ) );
 	}
@@ -89,7 +93,7 @@ class DESIGNfly_Twitter_Configuration {
 			$oauth_token_secret = filter_input( INPUT_GET, 'oauth_token_secret', FILTER_SANITIZE_STRING );
 
 			if ( ! empty( $oauth_token_secret ) && ! empty( $oauth_token ) ) {
-				if ( get_option( 'oauth_token' ) === $oauth_token && get_option( 'oauth_token_secret' ) === $oauth_token_secret ) {
+				if ( get_option( 'designfly_oauth_token' ) === $oauth_token && get_option( 'designfly_oauth_token_secret' ) === $oauth_token_secret ) {
 					wp_safe_redirect( admin_url( 'admin.php?page=designfly-twitter-configuration' ) );
 					exit;
 				}
@@ -102,17 +106,23 @@ class DESIGNfly_Twitter_Configuration {
 			'default'           => '',
 		);
 
-		register_setting( 'designfly-twitter-configuration', 'oauth_token', $args );
-		register_setting( 'designfly-twitter-configuration', 'oauth_token_secret', $args );
-		register_setting( 'designfly-twitter-configuration', 'screen_name', $args );
+		register_setting( 'designfly-twitter-configuration', 'designfly_consumer_key', $args );
+		register_setting( 'designfly-twitter-configuration', 'designfly_consumer_secret', $args );
+		register_setting( 'designfly-twitter-configuration', 'designfly_oauth_token', $args );
+		register_setting( 'designfly-twitter-configuration', 'designfly_oauth_token_secret', $args );
+		register_setting( 'designfly-twitter-configuration', 'designfly_screen_name', $args );
 
 		add_settings_section( 'designfly-twitter-configuration', __( 'Twitter Configuration', 'designfly' ), array( $this, 'section_callback' ), 'designfly-twitter-configuration' );
 
-		$setting = 'oauth_token';
+		$setting = 'designfly_consumer_key';
+		add_settings_field( $setting, __( 'Consumer Key', 'designfly' ), array( $this, 'field_callback' ), 'designfly-twitter-configuration', 'designfly-twitter-configuration', array( 'setting' => $setting ) );
+		$setting = 'designfly_consumer_secret';
+		add_settings_field( $setting, __( 'Consumer Secret', 'designfly' ), array( $this, 'field_callback' ), 'designfly-twitter-configuration', 'designfly-twitter-configuration', array( 'setting' => $setting ) );
+		$setting = 'designfly_oauth_token';
 		add_settings_field( $setting, __( 'Access Token', 'designfly' ), array( $this, 'field_callback' ), 'designfly-twitter-configuration', 'designfly-twitter-configuration', array( 'setting' => $setting ) );
-		$setting = 'oauth_token_secret';
+		$setting = 'designfly_oauth_token_secret';
 		add_settings_field( $setting, __( 'Access Token Secret', 'designfly' ), array( $this, 'field_callback' ), 'designfly-twitter-configuration', 'designfly-twitter-configuration', array( 'setting' => $setting ) );
-		$setting = 'screen_name';
+		$setting = 'designfly_screen_name';
 		add_settings_field( $setting, __( 'Screen Name', 'designfly' ), array( $this, 'field_callback' ), 'designfly-twitter-configuration', 'designfly-twitter-configuration', array( 'setting' => $setting ) );
 	}
 
@@ -158,14 +168,22 @@ class DESIGNfly_Twitter_Configuration {
 	 * @param Array $args Arguments passed while registering settings field.
 	 */
 	public function field_callback( $args ) {
-		$setting = filter_input( INPUT_GET, $args['setting'], FILTER_SANITIZE_STRING );
+		$setting = filter_input( INPUT_GET, explode( 'designfly_', $args['setting'] )[1], FILTER_SANITIZE_STRING );
 
 		if ( empty( $setting ) ) {
 			$setting = get_option( $args['setting'] );
 		}
 
+		$placeholder = 'placeholder="';
+
+		if ( 'designfly_consumer_key' === $args['setting'] || 'designfly_consumer_secret' === $args['setting'] ) {
+			$placeholder .= esc_attr__( 'Keep empty to use default.', 'designfly' );
+		}
+
+		$placeholder .= '"';
+
 		?>
-		<input size="57" type="text" name="<?php echo esc_attr( $args['setting'] ); ?>" value="<?php echo ( empty( $setting ) ? '' : esc_attr( $setting ) ); ?>">
+		<input <?php echo $placeholder; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> size="57" type="text" name="<?php echo esc_attr( $args['setting'] ); ?>" value="<?php echo ( empty( $setting ) ? '' : esc_attr( $setting ) ); ?>">
 		<?php
 	}
 

@@ -11,19 +11,6 @@
 class DESIGNfly_Twitter_Widget extends WP_Widget {
 
 	/**
-	 * Default consumer key.
-	 *
-	 * @var string
-	 */
-	private $consumer_key = 'FPYSYWIdyUIQ76Yz5hdYo5r7y';
-	/**
-	 * Default consumer secret.
-	 *
-	 * @var string
-	 */
-	private $consumer_secret = 'GqPj9BPgJXjRKIGXCULJljocGPC62wN2eeMSnmZpVelWreFk9z';
-
-	/**
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
@@ -51,7 +38,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		$screen_name = get_option( 'screen_name', 'rtCamp' );
+		$screen_name = get_option( 'designfly_screen_name', 'rtCamp' );
 		$follow      = '<div><form method="get" action="https://twitter.com/' . esc_attr( $screen_name ) . '"><button type="submit" class="twitter-follow-button"><span class="dashicons dashicons-twitter"></span>' . esc_html__( 'Follow us', 'designfly' ) . '</button></form></div>';
 
 		echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -112,7 +99,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 		$title = ( ! empty( $instance['title'] ) ? $instance['title'] : '' );
 		$nots  = ( ! empty( $instance['nots'] ) ? $instance['nots'] : '' );
 
-		$oauth_token = get_option( 'oauth_token' );
+		$oauth_token = get_option( 'designfly_oauth_token' );
 		if ( empty( $oauth_token ) ) {
 			echo '<p class="designfly-config-warning"><a target="_blank" href="' . esc_url( admin_url( 'admin.php?page=designfly-twitter-configuration' ) ) . '">' . esc_html__( 'Twitter Configuration', 'designfly' ) . '</a>' . esc_html__( ' is not set, please set them first.', 'designfly' ) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
@@ -234,18 +221,25 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 	 * @return Array Tweets.
 	 */
 	private function get_tweets( $args ) {
-		$oauth_token        = get_option( 'oauth_token' );
-		$oauth_token_secret = get_option( 'oauth_token_secret' );
-		$screen_name        = get_option( 'screen_name', 'rtCamp' );
+		$consumer_key       = get_option( 'designfly_consumer_key' );
+		$consumer_secret    = get_option( 'designfly_consumer_secret' );
+		$oauth_token        = get_option( 'designfly_oauth_token' );
+		$oauth_token_secret = get_option( 'designfly_oauth_token_secret' );
+		$screen_name        = get_option( 'designfly_screen_name', 'rtCamp' );
+
+		if ( empty( $consumer_key ) ) {
+			global $designfly_consumer_key;
+			$consumer_key = $designfly_consumer_key;
+		}
+
+		if ( empty( $consumer_secret ) ) {
+			global $designfly_consumer_secret;
+			$consumer_secret = $designfly_consumer_secret;
+		}
 
 		if ( empty( $oauth_token_secret ) || empty( $oauth_token ) ) {
 			return false;
 		}
-
-		$oauth_access_token        = $oauth_token;
-		$oauth_access_token_secret = $oauth_token_secret;
-		$consumer_key              = $this->consumer_key;
-		$consumer_secret           = $this->consumer_secret;
 
 		$twitter_timeline = 'user_timeline';
 
@@ -258,7 +252,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 			'oauth_consumer_key'     => $consumer_key,
 			'oauth_nonce'            => time(),
 			'oauth_signature_method' => 'HMAC-SHA1',
-			'oauth_token'            => $oauth_access_token,
+			'oauth_token'            => $oauth_token,
 			'oauth_timestamp'        => time(),
 			'oauth_version'          => '1.0',
 		);
@@ -276,7 +270,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 			$r[] = "$key=" . rawurlencode( $value );
 		}
 		$base_info     = $method . '&' . rawurlencode( $base_u_r_i ) . '&' . rawurlencode( implode( '&', $r ) );
-		$composite_key = rawurlencode( $consumer_secret ) . '&' . rawurlencode( $oauth_access_token_secret );
+		$composite_key = rawurlencode( $consumer_secret ) . '&' . rawurlencode( $oauth_token_secret );
 
 		// get oauth signature.
 		$oauth_signature          = base64_encode( hash_hmac( 'sha1', $base_info, $composite_key, true ) ); // phpcs:ignore
