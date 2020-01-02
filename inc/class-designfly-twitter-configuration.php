@@ -70,7 +70,7 @@ class DESIGNfly_Twitter_Configuration {
 			// (sections are registered for "wporg", each field is registered to a specific section).
 			do_settings_sections( 'designfly-twitter-configuration' );
 			// output save settings button.
-			submit_button( 'Save Settings' );
+			submit_button( __( 'Save Settings', 'designfly' ) );
 			?>
         </form>
         <?php
