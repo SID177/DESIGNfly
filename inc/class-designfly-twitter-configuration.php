@@ -20,11 +20,14 @@ class DESIGNfly_Twitter_Configuration {
 	 * Constructor, registering hooks.
 	 */
 	public function __construct() {
+		// Setting default global consumer key and secret.
 		global $designfly_consumer_key, $designfly_consumer_secret;
 		$designfly_consumer_key    = 'FPYSYWIdyUIQ76Yz5hdYo5r7y';
 		$designfly_consumer_secret = 'GqPj9BPgJXjRKIGXCULJljocGPC62wN2eeMSnmZpVelWreFk9z';
 
+		// Adds menu item on top level menu.
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
+		// Registers settings, sections and fields.
 		add_action( 'admin_init', array( $this, 'options_page_init' ) );
 	}
 
@@ -47,10 +50,12 @@ class DESIGNfly_Twitter_Configuration {
 	 * Content for settings page.
 	 */
 	public function create_options_page() {
+		// Stop if the user doesn't have this capability.
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
 
+		// To correct notice bar.
 		echo '<div class="wrap">';
         // phpcs:disable
         // PHPCS is disabled because it gives nonce verification error.
@@ -87,12 +92,15 @@ class DESIGNfly_Twitter_Configuration {
 	 * Registers settings, sections and setting fields.
 	 */
 	public function options_page_init() {
+		// Manually redirecting to designfly-twitter-configuration page to remove query string when
+		// Returning from twitter auth page.
 		$page = filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING );
 		if ( 'designfly-twitter-configuration' === $page ) {
 			$oauth_token        = filter_input( INPUT_GET, 'oauth_token', FILTER_SANITIZE_STRING );
 			$oauth_token_secret = filter_input( INPUT_GET, 'oauth_token_secret', FILTER_SANITIZE_STRING );
 
 			if ( ! empty( $oauth_token_secret ) && ! empty( $oauth_token ) ) {
+				// If saved option is same as returned token and secret, then redirect.
 				if ( get_option( 'designfly_oauth_token' ) === $oauth_token && get_option( 'designfly_oauth_token_secret' ) === $oauth_token_secret ) {
 					wp_safe_redirect( admin_url( 'admin.php?page=designfly-twitter-configuration' ) );
 					exit;
@@ -100,20 +108,24 @@ class DESIGNfly_Twitter_Configuration {
 			}
 		}
 
+		// Settings arguments.
 		$args = array(
 			'type'              => 'string',
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '',
 		);
 
+		// Registering individual settings.
 		register_setting( 'designfly-twitter-configuration', 'designfly_consumer_key', $args );
 		register_setting( 'designfly-twitter-configuration', 'designfly_consumer_secret', $args );
 		register_setting( 'designfly-twitter-configuration', 'designfly_oauth_token', $args );
 		register_setting( 'designfly-twitter-configuration', 'designfly_oauth_token_secret', $args );
 		register_setting( 'designfly-twitter-configuration', 'designfly_screen_name', $args );
 
+		// All settings are under this section.
 		add_settings_section( 'designfly-twitter-configuration', __( 'Twitter Configuration', 'designfly' ), array( $this, 'section_callback' ), 'designfly-twitter-configuration' );
 
+		// Defining settings fields.
 		$setting = 'designfly_consumer_key';
 		add_settings_field( $setting, __( 'Consumer Key', 'designfly' ), array( $this, 'field_callback' ), 'designfly-twitter-configuration', 'designfly-twitter-configuration', array( 'setting' => $setting ) );
 		$setting = 'designfly_consumer_secret';
@@ -130,6 +142,7 @@ class DESIGNfly_Twitter_Configuration {
 	 * Callback function for registered section - designfly-twitter-configuration.
 	 */
 	public function section_callback() {
+		// Show retrieve access token button for automatic retrieval.
 		$this->retrive_access_token_secret();
 	}
 
@@ -168,6 +181,7 @@ class DESIGNfly_Twitter_Configuration {
 	 * @param Array $args Arguments passed while registering settings field.
 	 */
 	public function field_callback( $args ) {
+		// Remove designfly_ from setting name to get match query string data.
 		$setting = filter_input( INPUT_GET, explode( 'designfly_', $args['setting'] )[1], FILTER_SANITIZE_STRING );
 
 		if ( empty( $setting ) ) {
@@ -176,6 +190,7 @@ class DESIGNfly_Twitter_Configuration {
 
 		$placeholder = 'placeholder="';
 
+		// Show placeholder for consumer key and secret.
 		if ( 'designfly_consumer_key' === $args['setting'] || 'designfly_consumer_secret' === $args['setting'] ) {
 			$placeholder .= esc_attr__( 'Keep empty to use default.', 'designfly' );
 		}

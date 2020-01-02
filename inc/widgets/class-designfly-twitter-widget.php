@@ -47,6 +47,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 			echo $args['before_title'] . esc_html( $title ) . $follow . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
+		// Show tweets.
 		foreach ( $tweets as $tweet ) {
 			?>
 			<div class="designfly-tweet-block">
@@ -100,6 +101,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 		$nots  = ( ! empty( $instance['nots'] ) ? $instance['nots'] : '' );
 
 		$oauth_token = get_option( 'designfly_oauth_token' );
+		// Show warning when twitter configuration is not set.
 		if ( empty( $oauth_token ) ) {
 			echo '<p class="designfly-config-warning"><a target="_blank" href="' . esc_url( admin_url( 'admin.php?page=designfly-twitter-configuration' ) ) . '">' . esc_html__( 'Twitter Configuration', 'designfly' ) . '</a>' . esc_html__( ' is not set, please set them first.', 'designfly' ) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
@@ -227,20 +229,24 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 		$oauth_token_secret = get_option( 'designfly_oauth_token_secret' );
 		$screen_name        = get_option( 'designfly_screen_name', 'rtCamp' );
 
+		// Assign default consumer key when option is empty.
 		if ( empty( $consumer_key ) ) {
 			global $designfly_consumer_key;
 			$consumer_key = $designfly_consumer_key;
 		}
 
+		// Assign default consumer secret when option is empty.
 		if ( empty( $consumer_secret ) ) {
 			global $designfly_consumer_secret;
 			$consumer_secret = $designfly_consumer_secret;
 		}
 
+		// Stop if token and secret is not provided.
 		if ( empty( $oauth_token_secret ) || empty( $oauth_token ) ) {
 			return false;
 		}
 
+		// User's timeline tweets.
 		$twitter_timeline = 'user_timeline';
 
 		$request = array(
@@ -284,6 +290,7 @@ class DESIGNfly_Twitter_Widget extends WP_Widget {
 		}
 		$r .= implode( ', ', $values );
 
+		// Making request.
 		$url         = "https://api.twitter.com/1.1/statuses/$twitter_timeline.json?" . http_build_query( $request );
 		$result_full = wp_remote_get(
 			$url,
