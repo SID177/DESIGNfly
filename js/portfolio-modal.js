@@ -1,54 +1,55 @@
 // Get the modal
 
+/*global $*/
 $( document ).ready( function() {
-    var modal = $( '#portfolio-modal' );
-    var modalImg = $( '#portfolio-modal-img' );
-    var titleSpan = $( '#portfolio-title-span' );
-    var portfolioBlock = $( '.portfolio-block' );
-    var currentBlock = false;
-    
-    var setModal = function( block ) {
-        var img = block.find( '.portfolio-img' );
+	const modal = $( '#portfolio-modal' );
+	const modalImg = $( '#portfolio-modal-img' );
+	const titleSpan = $( '#portfolio-title-span' );
+	const portfolioBlock = $( '.portfolio-block' );
+	let currentBlock = false;
 
-        modalImg.prop( 'src', img.prop( 'src' ) );
-        titleSpan.html( img.prop( 'alt' ) );
-        currentBlock = block;
-    }
+	const setModal = function( block ) {
+		const img = block.find( '.portfolio-img' );
 
-    $( '.portfolio-item' ).click( function() {
-        modal.css( 'display', 'block' );
-        setModal( $( this ) );
-    } );
+		modalImg.prop( 'src', img.prop( 'src' ) );
+		titleSpan.html( img.prop( 'alt' ) );
+		currentBlock = block;
+	};
 
-    var span = $( '.portfolio-close-span' );
-    span.click( function() {
-        modal.css( 'display', 'none' );
-        currentBlock = false;
-    } );
+	$( '.portfolio-item' ).click( function() {
+		modal.css( 'display', 'block' );
+		setModal( $( this ) );
+	} );
 
-    modal.find( '.navigation-arrow-left' ).click( function() {
-        var previousBlock = currentBlock.prev( '.portfolio-item' );
+	const span = $( '.portfolio-close-span' );
+	span.click( function() {
+		modal.css( 'display', 'none' );
+		currentBlock = false;
+	} );
 
-        if ( previousBlock.length > 0 ) {
-            setModal( previousBlock );
-        } else {
-            var lastBlock = portfolioBlock.find( '.portfolio-item' ).last();
-            if ( lastBlock.length > 0 ) {
-                setModal( lastBlock );
-            }
-        }
-    } );
+	modal.find( '.navigation-arrow-left' ).click( function() {
+		const previousBlock = currentBlock.prev( '.portfolio-item' );
 
-    modal.find( '.navigation-arrow-right' ).click( function() {
-        var nextBlock = currentBlock.next( '.portfolio-item' );
+		if ( previousBlock.length > 0 ) {
+			setModal( previousBlock );
+		} else {
+			const lastBlock = portfolioBlock.find( '.portfolio-item' ).last();
+			if ( lastBlock.length > 0 ) {
+				setModal( lastBlock );
+			}
+		}
+	} );
 
-        if ( nextBlock.length > 0 ) {
-            setModal( nextBlock );
-        } else {
-            var firstBlock = portfolioBlock.find( '.portfolio-item' ).first();
-            if ( firstBlock.length > 0 ) {
-                setModal( firstBlock );
-            }
-        }
-    } );
+	modal.find( '.navigation-arrow-right' ).click( function() {
+		const nextBlock = currentBlock.next( '.portfolio-item' );
+
+		if ( nextBlock.length > 0 ) {
+			setModal( nextBlock );
+		} else {
+			const firstBlock = portfolioBlock.find( '.portfolio-item' ).first();
+			if ( firstBlock.length > 0 ) {
+				setModal( firstBlock );
+			}
+		}
+	} );
 } );
