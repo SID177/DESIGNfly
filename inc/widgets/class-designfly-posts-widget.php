@@ -74,7 +74,7 @@ class DESIGNfly_Posts_Widget extends WP_Widget {
 				)
 			);
 
-			$qry_args['tag__in'] = $terms;
+			$qry_args['category__in'] = $terms;
 		}
 
 		$posts = get_posts( $qry_args );
