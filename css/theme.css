@@ -81,7 +81,7 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
 }
 div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article header.entry-header {
   width: 100%;
-  height: 50px;
+  height: auto;
   background-color: #222;
   display: flex;
   font-family: "Open sans";
@@ -101,7 +101,8 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   padding: 0.4em 0.9em;
   border-right: 1px solid rgba(255, 255, 255, 0.7);
   width: fit-content;
-  height: inherit;
+  height: auto;
+  line-height: 1;
 }
 div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article header.entry-header span.entry-meta span.post-day {
   margin: 0;
@@ -119,7 +120,7 @@ div#primary.show-sidebar main#main div.blog-content div.post-content div.post-gr
   display: inline-block;
   line-height: 1;
   position: relative;
-  top: -0.55em;
+  top: -0.25em;
 }
 div#primary.show-sidebar main#main div.blog-content div.post-content div.post-grid article div.entry-content {
   margin-top: 1em;
@@ -791,6 +792,9 @@ div#portfolio-modal {
   div#primary main#main div.blog-content div.post-content div.post-grid {
     grid-template-columns: 100% !important;
     grid-row-gap: 2em !important;
+  }
+  div#primary main#main div.blog-content div.post-content div.post-grid article span.entry-meta {
+    padding: 0.8em 0.9em !important;
   }
   div#primary main#main div.blog-content div.post-content div.post-grid article div.entry-content {
     display: block !important;
