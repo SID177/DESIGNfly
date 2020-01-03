@@ -13,9 +13,9 @@ It has a settings page from which you can set currency and number of posts to sh
 
 The structure of this theme is created from https://underscores.me/
 
-This theme is internationalized and follow css, JavaScript and PHP coding standards. It uses SASS framework for css development.
+This theme is internationalized and follow **css, JavaScript** and **PHP** coding standards. It uses **SASS** framework for css development.
 
-It uses WordPress phpcs, ESLint and Stylelint.
+It uses **WordPress phpcs, ESLint** and **Stylelint**.
 
 ### Installing
 
