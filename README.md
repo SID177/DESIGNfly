@@ -13,7 +13,7 @@ It has a settings page from which you can set currency and number of posts to sh
 
 The structure of this theme is created from https://underscores.me/
 
-This theme is internationalized and follows css, JavaScript and PHP coding standards. It uses SASS framework for css development.
+This theme is internationalized and follow css, JavaScript and PHP coding standards. It uses SASS framework for css development.
 
 It uses WordPress phpcs, ESLint and Stylelint.
 
@@ -29,25 +29,46 @@ After uploading, activate the theme from themes page.
 
 ## Usage Guidelines
 
-It will add **Books** menu on wp-admin. From here you can manage book posts.
+It will add **Portfolios** menu on wp-admin. From here you can manage portfolio posts.
 
-On edit post screen, you can set metadata from below the text editor.
+You can manage **Categories** from **Portfolio Categories** menu located under **Portfolios** menu.
 
-You can set categories and tags of this book from Book Categories and Book Tags metaboxes.
+This theme adds various widgets which can be used from **Appearance -> Widgets** page.
 
-### WP Book Widget
+### DESIGNfly Portfolios Widget
 
-This plugin adds **WP Book Widget** which can be used from **Appearance -> Widgets** page.
+This widget is used to show portfolios in the widget.
 
-You can specify title, category and number of items in the widget settings.
+You can specify title and number of items to show from settings.
 
-All the categories you created from Book Categories metabox will be shown under category dropdown.
+### DESIGNfly Posts Widget
 
-### Shortcode
+This widget is used to show posts based on different scenarios.
 
-It supports a shortcode **[wp-book]**. Supported attributes are id, author_name, year, category, tag, and publisher. The slug of the category and tag needs to be specified here.
+Supported values of **Type of Posts**:
+* **Related (to current post) Posts**: Shows related posts to current post. If this is not a single page then this widget won't be shown.
+* **Recent Posts**: Shows recently created posts.
+* **Popular Posts**: Shows most viewed posts.
 
-```
-[wp-book category="novel" publisher="John Newman"]
-```
+You can also specify title and number of items to show.
 
+### DESIGNfly Facebook Widget
+
+This widget is used to show a particular Facebook page.
+
+You can specify title and Facebook Application ID and Facebook Page Url.
+
+The page url must be a valid url.
+
+### DESIGNfly Twitter Widget
+
+This widget is used to show the tweets.
+
+You can specify title and number of tweets to show.
+
+This theme adds a settings page named **DESIGNfly Twitter** from where you can configure your twitter account.
+
+You can either manually set all settings field if you want to use custom Twitter Application.
+Or you can click on **Log in to Twitter and get Access Token and Secret** button to get Access Token, Token Secret and Screen Name.
+
+If you click on this button, the default consumer key and secret will be used. Also, it will overwrite existing access token and token secret.

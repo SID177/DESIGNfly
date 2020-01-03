@@ -1,38 +1,61 @@
-=== DESIGNfly ===
+DESIGNfly
+A Responsive WordPress theme.
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Getting Started
+It adds a Custom Post Type designfly_portfolio and Custom Taxonomy and designfly_categories. The sidebar is supported.
 
-Requires at least: 4.5
-Tested up to: 4.8
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+It has a settings page from which you can set currency and number of posts to show.
 
-A starter theme called DESIGNfly.
+The structure of this theme is created from https://underscores.me/
 
-== Description ==
+This theme is internationalized and follow css, JavaScript and PHP coding standards. It uses SASS framework for css development.
 
-Description
+It uses WordPress phpcs, ESLint and Stylelint.
 
-== Installation ==
+Installing
+Download zip of this repository.
+Goto wp-admin of your site.
+Click on Appearance -> Themes located in menu.
+Click on Add New and then Upload Theme.
+Upload the downloaded repository here.
+After uploading, activate the theme from themes page.
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+Usage Guidelines
+It will add Portfolios menu on wp-admin. From here you can manage portfolio posts.
 
-== Frequently Asked Questions ==
+You can manage Categories from Portfolio Categories menu located under Portfolios menu.
 
-= Does this theme support any plugins? =
+This theme adds various widgets which can be used from Appearance -> Widgets page.
 
-DESIGNfly includes support for Infinite Scroll in Jetpack.
+DESIGNfly Portfolios Widget
+This widget is used to show portfolios in the widget.
 
-== Changelog ==
+You can specify title and number of items to show from settings.
 
-= 1.0 - May 12 2015 =
-* Initial release
+DESIGNfly Posts Widget
+This widget is used to show posts based on different scenarios.
 
-== Credits ==
+Supported values of Type of Posts:
 
-* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+Related (to current post) Posts: Shows related posts to current post. If this is not a single page then this widget won't be shown.
+Recent Posts: Shows recently created posts.
+Popular Posts: Shows most viewed posts.
+You can also specify title and number of items to show.
+
+DESIGNfly Facebook Widget
+This widget is used to show a particular Facebook page.
+
+You can specify title and Facebook Application ID and Facebook Page Url.
+
+The page url must be a valid url.
+
+DESIGNfly Twitter Widget
+This widget is used to show the tweets.
+
+You can specify title and number of tweets to show.
+
+This theme adds a settings page named DESIGNfly Twitter from where you can configure your twitter account.
+
+You can either manually set all settings field if you want to use custom Twitter Application. Or you can click on Log in to Twitter and get Access Token and Secret button to get Access Token, Token Secret and Screen Name.
+
+If you click on this button, the default consumer key and secret will be used. Also, it will overwrite existing access token and token secret.
