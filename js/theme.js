@@ -9,4 +9,5 @@ $( document ).ready( function() {
 	if ( hash ) {
 		$( hash ).addClass( 'current-comment' );
 	}
+
 } );

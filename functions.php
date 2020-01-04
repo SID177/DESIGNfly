@@ -79,6 +79,8 @@ if ( ! function_exists( 'designfly_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		// add_theme_support( 'service_worker', true );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'designfly_setup' );
@@ -398,3 +400,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active( 'pwa/pwa.php' ) ) {
+	/**
+	 * Functions which enhance the theme by hooking into WordPress.
+	 */
+	require get_template_directory() . '/inc/class-designfly-service-worker-scripts.php';
+
+	new DESIGNfly_Service_Worker_Scripts();
+}
