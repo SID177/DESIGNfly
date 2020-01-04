@@ -1160,3 +1160,23 @@ div#portfolio-modal {
     width: $content-width !important;
   }
 }
+
+#screenFiller {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#offlineText {
+  padding: 0.5em 1em;
+  display: none;
+  width: 100%;
+  background-color: red;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 9999;
+}

@@ -9,7 +9,6 @@ $( document ).ready( function() {
 	if ( hash ) {
 		$( hash ).addClass( 'current-comment' );
 	}
-	
 
 	const screenFitter = $( '#screenFiller' );
 	const offlineText = $( '#offlineText' );
@@ -20,13 +19,11 @@ $( document ).ready( function() {
 	}
 
 	window.addEventListener( 'online', () => {
-		console.log('here');
 		screenFitter.css( 'border', 'none' );
 		offlineText.css( 'display', 'none' );
 	} );
 
 	window.addEventListener( 'offline', () => {
-		console.log('offline');
 		screenFitter.css( 'border', '5px solid red' );
 		offlineText.css( 'display', 'block' );
 	} );
@@ -34,5 +31,4 @@ $( document ).ready( function() {
 	offlineText.click( () => {
 		offlineText.css( 'display', 'none' );
 	} );
-
 } );

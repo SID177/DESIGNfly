@@ -79,8 +79,8 @@ if ( ! function_exists( 'designfly_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// add_theme_support( 'service_worker', true );
-
+		// Add theme support for service worker, required for PWA plugin.
+		add_theme_support( 'service_worker', true );
 	}
 endif;
 add_action( 'after_setup_theme', 'designfly_setup' );
@@ -401,7 +401,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
 if ( is_plugin_active( 'pwa/pwa.php' ) ) {
 	/**
 	 * Functions which enhance the theme by hooking into WordPress.
