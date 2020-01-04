@@ -9,5 +9,30 @@ $( document ).ready( function() {
 	if ( hash ) {
 		$( hash ).addClass( 'current-comment' );
 	}
+	
+
+	const screenFitter = $( '#screenFiller' );
+	const offlineText = $( '#offlineText' );
+
+	if ( ! navigator.onLine ) {
+		screenFitter.css( 'border', '5px solid red' );
+		offlineText.css( 'display', 'block' );
+	}
+
+	window.addEventListener( 'online', () => {
+		console.log('here');
+		screenFitter.css( 'border', 'none' );
+		offlineText.css( 'display', 'none' );
+	} );
+
+	window.addEventListener( 'offline', () => {
+		console.log('offline');
+		screenFitter.css( 'border', '5px solid red' );
+		offlineText.css( 'display', 'block' );
+	} );
+
+	offlineText.click( () => {
+		offlineText.css( 'display', 'none' );
+	} );
 
 } );

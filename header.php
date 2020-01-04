@@ -48,4 +48,9 @@
 		</div>
 	</header><!-- #masthead -->
 
+	<div id="screenFiller"></div>
+	<div id="offlineText">
+		<?php esc_html_e( "Looks like you're offline." ); ?>
+	</div>
+
 	<div id="content" class="site-content">
