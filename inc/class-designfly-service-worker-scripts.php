@@ -15,7 +15,6 @@ class DESIGNfly_Service_Worker_Scripts {
 	public function __construct() {
 		// Register for the frontend service worker.
 		add_action( 'wp_front_service_worker', array( $this, 'register_frontend_service_worker_script' ) );
-		// add_filter( 'web_app_manifest', array( $this, 'web_app_manifest' ) );
 	}
 
 	/**
