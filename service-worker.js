@@ -1,7 +1,7 @@
 /*global workbox*/
 
-const offlinePage = '/designfly-test/wp-content/themes/DESIGNfly/offline.html';
-const offlineImage = '/designfly-test/wp-content/themes/DESIGNfly/img/noimagefound.png';
+const offlinePage = '/wp-content/themes/DESIGNfly/offline.html';
+const offlineImage = '/wp-content/themes/DESIGNfly/img/noimagefound.png';
 
 workbox.precaching.precacheAndRoute( [
 	offlinePage,
