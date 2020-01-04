@@ -1,8 +1,6 @@
-<!-- [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s) -->
-
 # DESIGNfly
 
-A Responsive WordPress theme.
+A Responsive and Progressive ([PWA](https://developers.google.com/web/progressive-web-apps)) WordPress theme.
 
 ## Getting Started
 
@@ -14,6 +12,22 @@ It has a settings page from which you can set currency and number of posts to sh
 The structure of this theme is created from https://underscores.me/
 
 This theme is internationalized and follow **css, JavaScript** and **PHP** coding standards. It uses **SASS** framework for css development.
+
+This theme supports PWA features like Offline User Experience. This theme provides PWA features for front-end pages only.
+
+### Requirements to use PWA features.
+
+* This theme is dependent upon [PWA WordPress plugin](https://wordpress.org/plugins/pwa/) developed by PWA Contributors. So make sure this is installed and activated.
+* Make sure your site is running either on localhost or HTTPS (If the url contains https doesn't mean its using https, the first block of the url must turn green).
+* If both above conditions are met, then it will install the service worker on the first load.
+
+### How to use PWA features.
+
+* From the second load, you can use Offline User Experience feature.
+* When you visit a front-end side page, it will be cached along side images and css/js files of that page.
+* So if your network gets disconnected you can still visit the pages you've visited.
+* If you visit a page which is not cached, you'll see offline page instead.
+* The number of pages cached will rely on the storage capacity your device have.
 
 It uses **WordPress phpcs, ESLint** and **Stylelint**.
 
