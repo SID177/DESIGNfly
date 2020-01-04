@@ -13,6 +13,8 @@ The structure of this theme is created from https://underscores.me/
 
 This theme is internationalized and follow **css, JavaScript** and **PHP** coding standards. It uses **SASS** framework for css development.
 
+It uses **WordPress phpcs, ESLint** and **Stylelint**.
+
 This theme supports PWA features like Offline User Experience. This theme provides PWA features for front-end pages only.
 
 ### Requirements to use PWA features.
@@ -28,8 +30,6 @@ This theme supports PWA features like Offline User Experience. This theme provid
 * So if your network gets disconnected you can still visit the pages you've visited.
 * If you visit a page which is not cached, you'll see offline page instead.
 * The number of pages cached will rely on the storage capacity your device have.
-
-It uses **WordPress phpcs, ESLint** and **Stylelint**.
 
 ### Installing
 
