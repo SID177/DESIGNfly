@@ -88,3 +88,5 @@ This theme supports PWA features like Offline User Experience. This theme provid
 * So if your network gets disconnected you can still visit the pages you've visited.
 * If you visit a page which is not cached, you'll see offline page instead.
 * The number of pages cached will rely on the storage capacity your device have.
+
+![Offline status](https://raw.githubusercontent.com/SID177/DESIGNfly/master/img/offine-screenshot-1.png) ![Offline page](https://raw.githubusercontent.com/SID177/DESIGNfly/master/img/offline-screenshot-2.png)
