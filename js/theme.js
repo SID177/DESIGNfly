@@ -10,21 +10,17 @@ $( document ).ready( function() {
 		$( hash ).addClass( 'current-comment' );
 	}
 
-	const screenFitter = $( '#screenFiller' );
 	const offlineText = $( '#offlineText' );
 
 	if ( ! navigator.onLine ) {
-		screenFitter.css( 'border', '5px solid red' );
 		offlineText.css( 'display', 'block' );
 	}
 
 	window.addEventListener( 'online', () => {
-		screenFitter.css( 'border', 'none' );
 		offlineText.css( 'display', 'none' );
 	} );
 
 	window.addEventListener( 'offline', () => {
-		screenFitter.css( 'border', '5px solid red' );
 		offlineText.css( 'display', 'block' );
 	} );
 

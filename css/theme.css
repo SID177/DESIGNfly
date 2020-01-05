@@ -932,14 +932,6 @@ div#portfolio-modal {
     width: 90% !important;
   }
 }
-#screenFiller {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 #offlineText {
   padding: 0.5em 1em;
   display: none;
