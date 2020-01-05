@@ -38,9 +38,11 @@ class DESIGNfly_Portfolio_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$posts = get_posts(
 			array(
-				'post_type'   => 'designfly_portfolio',
-				'numberposts' => ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois ),
-				'post_status' => 'publish',
+				'post_type'    => 'designfly_portfolio',
+				'numberposts'  => ( ! empty( $instance['nois'] ) ? $instance['nois'] : $this->default_nois ),
+				'post_status'  => 'publish',
+				'meta_key'     => '_thumbnail_id',
+				'meta_compare' => 'EXISTS',
 			)
 		);
 
