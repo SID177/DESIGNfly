@@ -15,22 +15,6 @@ This theme is internationalized and follow **css, JavaScript** and **PHP** codin
 
 It uses **WordPress phpcs, ESLint** and **Stylelint**.
 
-This theme supports PWA features like Offline User Experience. This theme provides PWA features for front-end pages only.
-
-### Requirements to use PWA features.
-
-* This theme is dependent upon [PWA WordPress plugin](https://wordpress.org/plugins/pwa/) developed by PWA Contributors. So make sure this is installed and activated.
-* Make sure your site is running either on localhost or HTTPS (If the url contains https doesn't mean its using https, the first block of the url must turn green).
-* If both above conditions are met, then it will install the service worker on the first load.
-
-### How to use PWA features.
-
-* From the second load, you can use Offline User Experience feature.
-* When you visit a front-end side page, it will be cached along side images and css/js files of that page.
-* So if your network gets disconnected you can still visit the pages you've visited.
-* If you visit a page which is not cached, you'll see offline page instead.
-* The number of pages cached will rely on the storage capacity your device have.
-
 ### Installing
 
 * Download zip of this repository.
@@ -86,3 +70,21 @@ You can either manually set all settings field if you want to use custom Twitter
 Or you can click on **Log in to Twitter and get Access Token and Secret** button to get Access Token, Token Secret and Screen Name.
 
 If you click on this button, the default consumer key and secret will be used. Also, it will overwrite existing access token and token secret.
+
+## PWA
+
+This theme supports PWA features like Offline User Experience. This theme provides PWA features for front-end pages only.
+
+### Requirements to use PWA features.
+
+* This theme is dependent upon [PWA WordPress plugin](https://wordpress.org/plugins/pwa/) developed by PWA Contributors. So make sure this is installed and activated.
+* Make sure your site is running either on localhost or HTTPS (If the url contains https doesn't mean its using https, the first block of the url must turn green).
+* If both above conditions are met, then it will install the service worker on the first load.
+
+### How to use PWA features.
+
+* From the second load, you can use Offline User Experience feature.
+* When you visit a front-end side page, it will be cached along side images and css/js files of that page.
+* So if your network gets disconnected you can still visit the pages you've visited.
+* If you visit a page which is not cached, you'll see offline page instead.
+* The number of pages cached will rely on the storage capacity your device have.
