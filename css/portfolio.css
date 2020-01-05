@@ -130,9 +130,6 @@ div#primary main#main div.portfolio-block nav.pagination div.nav-links * {
   line-height: 30px;
   margin: 0 0.1em;
 }
-div#primary main#main div.portfolio-block nav.pagination div.nav-links a.prev {
-  display: none;
-}
 div#primary main#main div.portfolio-block nav.pagination div.nav-links a {
   font-family: "Open sans";
   font-weight: 600;
@@ -147,11 +144,6 @@ div#primary main#main div.portfolio-block nav.pagination div.nav-links span.curr
   color: #fff;
   background-color: #ef4634;
   border-radius: 3px;
-}
-div#primary main#main div.portfolio-block nav.pagination div.nav-links a.next img {
-  margin: -3px 0 0 0;
-  height: auto;
-  width: auto;
 }
 div#primary main#main div.portfolio-block nav.pagination div.nav-links a:hover {
   color: #fff;
@@ -231,10 +223,18 @@ div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#p
   cursor: pointer;
   width: fit-content;
 }
+div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#portfolio-modal-box-flex div#portfolio-modal-box-border div#portfolio-modal-caption span.navigation-arrow-left img {
+  height: 22px;
+  width: 22px;
+}
 div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#portfolio-modal-box-flex div#portfolio-modal-box-border div#portfolio-modal-caption span.navigation-arrow-right {
   justify-self: right;
   cursor: pointer;
   width: fit-content;
+}
+div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div#portfolio-modal-box-flex div#portfolio-modal-box-border div#portfolio-modal-caption span.navigation-arrow-right img {
+  height: 22px;
+  width: 22px;
 }
 div#portfolio-modal div#portfolio-modal-box div#portfolio-modal-box-middle div.portfolio-close span.portfolio-close-span {
   height: 35px;

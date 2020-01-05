@@ -222,6 +222,8 @@ function designfly_scripts() {
 
 	wp_enqueue_script( 'designfly-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
 
+	wp_enqueue_script( 'font-awesome', get_template_directory_uri() . '/js/font-awesome-icons.js', array(), '1.0', true );
+
 	if ( is_front_page() || is_post_type_archive( 'designfly_portfolio' ) || is_tax( 'designfly_categories' ) ) {
 
 		if ( is_front_page() ) {
@@ -244,8 +246,6 @@ function designfly_scripts() {
 
 			update_post_meta( $post->ID, 'designfly_post_views_count', $count );
 		}
-
-		wp_enqueue_script( 'font-awesome', get_template_directory_uri() . '/js/font-awesome-icons.js', array(), '1.0', true );
 
 		if ( get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );

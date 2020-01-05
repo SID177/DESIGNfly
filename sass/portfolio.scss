@@ -143,10 +143,6 @@ div#primary {
             margin: 0 0.1em;
           }
 
-          a.prev {
-            display: none;
-          }
-
           a {
             font-family: vars.$font-family;
             font-weight: 600;
@@ -162,14 +158,6 @@ div#primary {
             color: #fff;
             background-color: #ef4634;
             border-radius: 3px;
-          }
-
-          a.next {
-            img {
-              margin: -3px 0 0 0;
-              height: auto;
-              width: auto;
-            }
           }
 
           a:hover {
@@ -248,12 +236,22 @@ div#portfolio-modal {
               justify-self: left;
               cursor: pointer;
               width: fit-content;
+
+              img {
+                height: 22px;
+                width: 22px;
+              }
             }
 
             span.navigation-arrow-right {
               justify-self: right;
               cursor: pointer;
               width: fit-content;
+
+              img {
+                height: 22px;
+                width: 22px;
+              }
             }
           }
         }

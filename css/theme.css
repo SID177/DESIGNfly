@@ -531,9 +531,6 @@ div#primary.show-sidebar main#main nav.pagination div.nav-links * {
   line-height: 30px;
   margin: 0 0.1em;
 }
-div#primary.show-sidebar main#main nav.pagination div.nav-links a.prev {
-  display: none;
-}
 div#primary.show-sidebar main#main nav.pagination div.nav-links a {
   font-family: "Open sans";
   font-weight: 600;
@@ -548,11 +545,6 @@ div#primary.show-sidebar main#main nav.pagination div.nav-links span.current {
   color: #fff;
   background-color: #ef4634;
   border-radius: 3px;
-}
-div#primary.show-sidebar main#main nav.pagination div.nav-links a.next img {
-  margin: -3px 0 0 0;
-  height: auto;
-  width: auto;
 }
 div#primary.show-sidebar main#main nav.pagination div.nav-links a:hover {
   color: #fff;

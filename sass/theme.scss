@@ -612,10 +612,6 @@ div#primary.show-sidebar {
           margin: 0 0.1em;
         }
 
-        a.prev {
-          display: none;
-        }
-
         a {
           font-family: vars.$font-family;
           font-weight: 600;
@@ -631,14 +627,6 @@ div#primary.show-sidebar {
           color: #fff;
           background-color: #ef4634;
           border-radius: 3px;
-        }
-
-        a.next {
-          img {
-            margin: -3px 0 0 0;
-            height: auto;
-            width: auto;
-          }
         }
 
         a:hover {

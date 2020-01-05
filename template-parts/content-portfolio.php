@@ -6,14 +6,14 @@
  *
  * @package DESIGNfly
  */
-?>
 
+?>
 <div <?php post_class( 'portfolio-item' ); ?> id="post-<?php the_ID(); ?>">
-	<img class="portfolio-img" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= esc_html( get_the_title() ) ?>">
+	<img class="portfolio-img" src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="<?php echo esc_html( get_the_title() ); ?>">
 	<div class="portfolio-overlay">
 		<div class="portfolio-overlay-text">
 			<span class="dashicons dashicons-visibility portfolio-overlay-dashicon"></span><br/>
-			<?= esc_html__( 'View image', 'designfly' ) ?>
+			<?php echo esc_html__( 'View image', 'designfly' ); ?>
 		</div>
 	</div>
 </div><!-- #post-<?php the_ID(); ?> -->
